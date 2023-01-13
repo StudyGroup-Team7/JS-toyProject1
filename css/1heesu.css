@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+
+:root {
+	/* Base font size */
+	font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body{
+  font-family: "Montserrat", Arial, sans-serif;
+  min-height: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to top,rgb(225, 212, 253),rgb(255, 242, 242));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.hidden{
+  display: none;
+}
+
+.btn{
+  width: 5.5em;
+  height: 1.45em;
+  padding-top: 0.2rem;
+  color: rgb(137, 124, 249);
+  background-color: transparent;
+  font-size: 6rem;
+  border: 2px solid rgb(137, 124, 249);
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.btn:hover{
+  color: #fff;
+  background-color: rgb(137, 124, 249);
+}
+
+.container{
+  max-width: 100rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner{
+  font-size: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HEADER */
+
+
+.header{
+  font-size: 4rem;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+	padding: 3.5rem 0 6rem 0;
+	color: #1a1a1a;
+}
+
+/* TIMER */
+
+.timer .inner .timer__time{
+  padding: 12rem 0 14rem 0;
+  width: 100rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.timer .inner .timer__time span{
+  display: block;
+  width: 13.5rem;
+  margin:0 2rem;
+  text-align: center;
+}
+
+.timer .inner .timer__controler{
+  display: flex;
+  gap: 20px;
+}
+
+
+/* CLOCK */
+
+.clock{
+
+}
+
+.clock__day{
+
+}
+
+.clock__time{
+  
+}
+.clock__time{
+  
+}
+
+/* TODO-LIST */
+
+/* NAV MENU */
