@@ -49,3 +49,31 @@ function appenTime(t,s,m){
   secondes.textContent=String(s).padStart(2,'0')
   minutes.textContent=String(m).padStart(2,'0')
 }
+
+///// CLOCK
+
+const dateEl = document.querySelector('.date')
+const dayEl = document.querySelector('.day')
+const hourEl = document.querySelector('.hour')
+const minuteEl = document.querySelector('.minute')
+
+const days = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY']
+
+setInterval(onAppendTimes,100)
+
+function onAppendTimes(){
+  // TIME
+  const hour = new Date().getHours()
+  const minute = String(new Date().getMinutes()).padStart(2,'0')
+  
+  // DATE
+  const year = new Date().getFullYear()
+  const month = String(new Date().getMonth()+1).padStart(2,'0')
+  const date = new Date().getDate()
+  const day = new Date().getDay()
+
+  hourEl.textContent = hour
+  minuteEl.textContent = minute
+  dateEl.textContent = `${year}.${month}.${date}`
+  dayEl.textContent = `${days[day]}`
+}

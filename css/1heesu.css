@@ -110,6 +110,16 @@ body{
   padding-bottom: 0.6em;
 }
 
+.clock .blink{
+  animation: blinking 1s step-end infinite;
+}
+
+@keyframes blinking {
+  50%{
+    opacity: 0;
+  }
+}
+
 .clock .days{
   display: flex;
   flex-direction: column;
