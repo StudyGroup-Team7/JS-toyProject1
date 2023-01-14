@@ -29,3 +29,17 @@ function reset() {
   clearInterval(interval);
   timerEl.textContent = "00:00:00";
 }
+
+// clock
+
+function getClock() {
+  const clockEl = document.querySelector(".clock");
+  const date = new Date();
+  const todayHr = String(date.getHours()).padStart(2, "0");
+  const todayMin = String(date.getMinutes()).padStart(2, "0");
+  const todaySecs = String(date.getSeconds()).padStart(2, "0");
+  clockEl.textContent = `${todayHr}:${todayMin}:${todaySecs}`;
+}
+
+setInterval(getClock, 1000);
+getClock();
