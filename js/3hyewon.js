@@ -2,7 +2,7 @@
 const timerEl = document.querySelector(".timer");
 const startEl = document.querySelector(".start");
 const stopEl = document.querySelector(".stop");
-const resetEl = document.querySelector("reset");
+const resetEl = document.querySelector(".reset");
 
 let seconds = 0;
 let interval;
@@ -27,4 +27,5 @@ function stop() {
 }
 function reset() {
   clearInterval(interval);
+  timerEl.textContent = "00:00:00";
 }
