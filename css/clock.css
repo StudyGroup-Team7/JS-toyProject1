@@ -1,0 +1,22 @@
+.cal-clock-container {
+  width: 500px;
+  height: 400px;
+  background-color: blueviolet;
+}
+
+.cal-clock-container .calendar-box {
+  width: 300px;
+  height: 200px;
+  background-color: blue;
+}
+
+.cal-clock-container .calendar-box .clock-box {
+  width: 400px;
+  height: 300px;
+  background-color: #fff;
+  display: flex;
+  font-size: 30px;
+}
+.cal-clock-container .calendar-box .clock-box h2 {
+  color: red;
+}
