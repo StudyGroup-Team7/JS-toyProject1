@@ -13,9 +13,9 @@ resetEl.addEventListener("click", reset);
 
 function timer() {
   seconds++;
-  let hrs = String(parseInt(seconds / 3600)).padStart(2, "0");
-  let mins = String(parseInt(seconds / 60) - `${hrs * 60}`).padStart(2, "0");
-  let secs = String(seconds % 60).padStart(2, "0");
+  const hrs = String(parseInt(seconds / 3600)).padStart(2, "0");
+  const mins = String(parseInt(seconds / 60) - `${hrs * 60}`).padStart(2, "0");
+  const secs = String(seconds % 60).padStart(2, "0");
 
   timerEl.textContent = ` ${hrs}:${mins}:${secs}`;
 }
@@ -30,6 +30,26 @@ function reset() {
   timerEl.textContent = "00:00:00";
 }
 
+// month. date. day.
+function getCalendar() {
+  const calInput = document.querySelector(".calendar-input");
+  const calDate = new Date();
+  const todayMon = calDate.getMonth() + 1;
+  const todayDate = calDate.getDate();
+  const todayDay = calDate.getDay();
+  const week = [
+    "일요일",
+    "월요일",
+    "화요일",
+    "수요일",
+    "목요일",
+    "금요일",
+    "토요일",
+  ];
+
+  calInput.textContent = `${todayMon}월 ${todayDate}일 ,${week[todayDay]}`;
+}
+getCalendar();
 // clock
 
 function getClock() {
