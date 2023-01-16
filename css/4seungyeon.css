@@ -19,3 +19,52 @@ body,
 .menu-button .material-icons {
   font-size: 40px;
 }
+
+/* STOP WATCH */
+.stop-watch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: orange;
+  text-align: center;
+}
+
+.stop-watch .title {
+  margin-bottom: 40px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.stop-watch .timer {
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #fff;
+}
+
+.stop-watch .button-group .btn {
+  width: 200px;
+  height: 60px;
+  background-color: transparent;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 0.12em;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+}
+
+.stop-watch .button-group .btn:hover {
+  background-color: #fff;
+  color: orange;
+}
+
+.stop-watch .button-group .btn:not(:last-child) {
+  margin-right: 18px;
+}
