@@ -47,12 +47,14 @@ function startTimer() {
 
   if (msec > 99) {
     sec++
-    secondEl.innerHTML = `0${sec}`
+
+    if (sec <= 9) {
+      secondEl.innerHTML = `0${sec}`
+    } else if (sec > 9) {
+      secondEl.innerHTML = sec
+    }
+
     msec = 0
     milliSecondEl.innerHTML = `0${msec}`
-  }
-
-  if (sec > 9) {
-    secondEl.innerHTML = sec
   }
 }
