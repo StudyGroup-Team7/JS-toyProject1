@@ -77,3 +77,40 @@ function onAppendTimes(){
   dateEl.textContent = `${year}.${month}.${date}`
   dayEl.textContent = `${days[day]}`
 }
+
+////// TODO-LIST
+const todoFormEl = document.querySelector('.todo-form')
+const todoInputEl = document.querySelector('.todo-form>input')
+const todoBtnEl = document.querySelector('.todo-form>button')
+const taskEl = document.querySelector('.task')
+// const deletBtn = document.querySelector('.task li button')
+
+
+todoFormEl.addEventListener('submit',onSubmitHandler)
+
+function onSubmitHandler(e){
+  e.preventDefault()
+  let task = todoInputEl.value
+  todoInputEl.value = ''
+  onAddTask(task)
+}
+
+function onAddTask(task){
+  const liEl = document.createElement('li')
+  const inputEl = document.createElement('input')
+  const btnEl =document.createElement('button')
+  const spanEl =document.createElement('span')
+  inputEl.setAttribute('type','checkbox')
+  spanEl.textContent = task
+  btnEl.textContent = '❌'
+  liEl.append(inputEl)
+  liEl.append(spanEl)
+  liEl.append(btnEl)
+  taskEl.append(liEl)
+  btnEl.addEventListener('click',onDeletTask)
+}
+
+function onDeletTask(e){
+  const liEl = e.target.parentElement
+  liEl.remove()
+}
