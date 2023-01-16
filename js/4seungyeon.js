@@ -1,6 +1,7 @@
 const secondEl = document.querySelector('.second')
 const milliSecondEl = document.querySelector('.milli-second')
 const startButtonEl = document.querySelector('.btn-start')
+const stopButtonEl = document.querySelector('.btn-stop')
 const resetButtonEl = document.querySelector('.btn-reset')
 
 let startIntervalId
@@ -10,7 +11,12 @@ let msec = '00'
 
 // Events
 startButtonEl.addEventListener('click', function () {
+  clearInterval(startIntervalId)
   startIntervalId = setInterval(startTimer, 10)
+})
+
+stopButtonEl.addEventListener('click', function () {
+  clearInterval(startIntervalId)
 })
 
 resetButtonEl.addEventListener('click', function () {
