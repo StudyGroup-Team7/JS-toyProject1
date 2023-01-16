@@ -4,23 +4,23 @@ const startButtonEl = document.querySelector('.btn-start')
 const stopButtonEl = document.querySelector('.btn-stop')
 const resetButtonEl = document.querySelector('.btn-reset')
 
-let startIntervalId
+let intervalId
 
 let sec = '00'
 let msec = '00'
 
 // Events
 startButtonEl.addEventListener('click', function () {
-  clearInterval(startIntervalId)
-  startIntervalId = setInterval(startTimer, 10)
+  clearInterval(intervalId)
+  intervalId = setInterval(startTimer, 10)
 })
 
 stopButtonEl.addEventListener('click', function () {
-  clearInterval(startIntervalId)
+  clearInterval(intervalId)
 })
 
 resetButtonEl.addEventListener('click', function () {
-  clearInterval(startIntervalId)
+  clearInterval(intervalId)
 
   sec = '00'
   msec = '00'
