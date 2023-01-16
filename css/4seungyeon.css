@@ -1,3 +1,9 @@
+html,
+body,
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
 .menu-button {
   position: fixed;
   top: 20px;
