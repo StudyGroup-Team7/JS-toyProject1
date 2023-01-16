@@ -20,14 +20,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/3hyewon.css" />
+    <link rel="stylesheet" href="/css/clock.css" />
+    <link rel="stylesheet" href="/css/todo.css" />
+    <link rel="stylesheet" href="/css/stopwatch.css" />
+    <script type="module" defer src="/js/todo.js"></script>
     <script type="module" defer src="/js/3hyewon.js"></script>
   </head>
   <body>
     <header></header>
     <main>
       <!-- stopwatch -->
-
-      <div class="stopwatch">
+      <div class="stopwatch-container">
         <div class="stopwatch-box">
           <h2>Stopwatch</h2>
           <div class="timer">00:00:00</div>
@@ -38,11 +41,28 @@
           </div>
         </div>
       </div>
-      <!-- clock -->
-      <div class="clock">
-        ssss
-        <h2>What time is it now?</h2>
+      <!-- claendar & clock -->
+      <div class="cal-clock-container">
+        <div class="calendar-box">
+          <span class="calendar-input"></span>
+        </div>
+        <div class="clock-box">
+          <div class="title">What time is it now?</div>
+          <div class="clock-wrap">
+            <div class="hr"></div>
+            <div class="blink">:</div>
+            <div class="min"></div>
+            <div class="blink">:</div>
+            <div class="sec"></div>
+          </div>
+        </div>
       </div>
+      <!-- todo -->
+      <form class="todo-container">
+        <input class="todo-txt" type="text" placeholder="Enter your new task" />
+        <button class="todo-btn"></button>
+      </form>
+      <ul class="todo-list"></ul>
     </main>
   </body>
 </html>

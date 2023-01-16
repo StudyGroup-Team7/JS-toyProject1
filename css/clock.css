@@ -10,13 +10,28 @@
   background-color: blue;
 }
 
-.cal-clock-container .calendar-box .clock-box {
-  width: 400px;
+.cal-clock-container .clock-box {
+  width: 300px;
   height: 300px;
   background-color: #fff;
-  display: flex;
   font-size: 30px;
 }
-.cal-clock-container .calendar-box .clock-box h2 {
+.cal-clock-container .clock-box .title {
+  width: 200px;
+  height: 100px;
   color: red;
+}
+.cal-clock-container .clock-box .clock-wrap {
+  display: flex;
+  height: 100px;
+  width: 100px;
+}
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink-effect 1s step-start infinite;
 }

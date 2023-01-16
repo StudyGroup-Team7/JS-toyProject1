@@ -53,12 +53,18 @@ getCalendar();
 // clock
 
 function getClock() {
-  const clockEl = document.querySelector(".clock");
+  // const clockEl = document.querySelector(".clock-wrap");
   const date = new Date();
   const todayHr = String(date.getHours()).padStart(2, "0");
   const todayMin = String(date.getMinutes()).padStart(2, "0");
   const todaySecs = String(date.getSeconds()).padStart(2, "0");
-  clockEl.textContent = `${todayHr}:${todayMin}:${todaySecs}`;
+  const clockHr = document.querySelector(".clock-wrap .hr");
+  const clockMin = document.querySelector(".clock-wrap .min");
+  const clockSec = document.querySelector(".clock-wrap .sec");
+
+  clockHr.textContent = `${todayHr}`;
+  clockMin.textContent = `${todayMin}`;
+  clockSec.textContent = `${todaySecs}`;
 }
 
 setInterval(getClock, 1000);

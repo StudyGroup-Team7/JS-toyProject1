@@ -1,0 +1,13 @@
+.todo-container {
+}
+.todo-container .todo-txt {
+}
+.todo-container .todo-txt:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+.todo-container .todo-btn {
+}
+.todo-list {
+}
