@@ -147,7 +147,7 @@ h1{
   height: 100vh;
   background-image: linear-gradient(to top,rgb(225, 212, 253),rgb(255, 242, 242));
   margin: 0 auto;
-  padding-top: 2.5em;
+  padding-top: 2.2em;
   position: absolute;
   left: 0;
   right: 0;
@@ -414,7 +414,12 @@ h1{
 
 footer{
   font-size: 1.5rem;
+  text-align: center;
+  width: 20em;
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 1em;
+  margin: 0 auto;
   z-index: 10;
 }
