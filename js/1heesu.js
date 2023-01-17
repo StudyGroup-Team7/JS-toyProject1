@@ -111,11 +111,16 @@ function onAppendTimes(){
   const month = String(new Date().getMonth()+1).padStart(2,'0')
   const date = new Date().getDate()
   const day = new Date().getDay()
-
+  
+  
   hourEl.textContent = String(hour).padStart(2,'0')
   minuteEl.textContent = minute
   dateEl.textContent = `${year}.${month}.${date}`
   dayEl.textContent = `${days[day]}`
+  
+  // COPY
+  const copyYear = document.querySelector('.copy-year')
+  copyYear.textContent = year
 }
 
 ////// TODO-LIST
