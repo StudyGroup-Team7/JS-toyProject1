@@ -29,6 +29,8 @@ body,
   height: 100vh;
   background-color: orange;
   text-align: center;
+
+  display: none;
 }
 
 .stop-watch .title {
@@ -67,4 +69,16 @@ body,
 
 .stop-watch .button-group .btn:not(:last-child) {
   margin-right: 18px;
+}
+
+/* CLOCK */
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 60px;
+  color: #17d3fe;
+  letter-spacing: 7px;
+  background-color: #000;
 }
