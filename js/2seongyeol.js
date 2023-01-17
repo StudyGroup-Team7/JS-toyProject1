@@ -30,15 +30,21 @@ let count = 0
 let timer = false
 let recordCount = 0
 const INITIAL_DISPLAY = "00 : 00 : 00"
-
 //[투두]
 let todoDataList = []
 
 //INIT
-//[스탑워치]
-display.textContent = INITIAL_DISPLAY
-//[시계]
-setInterval(renderTime, 1000)
+;(() => {
+  //[스탑워치]
+  display.textContent = INITIAL_DISPLAY
+  //[시계]
+  setInterval(renderTime, 1000)
+  //[투두]
+  if (localStorage.getItem('todo')){
+    initDataList()
+    renderTodoList()
+  }
+})()
 
 //EVENT LISTENERS
 //[네비게이션 토글]
@@ -53,10 +59,12 @@ puaseBtn.addEventListener('click', onPauseClicked)
 resetBtn.addEventListener('click', onResetClicked)
 
 //[투두]
-todoAddBtn.addEventListener('click', onTodoAddBtn)
+todoAddBtn.addEventListener('click', () => {
+  onTodoAddBtn()
+})
 todoInput.addEventListener('keyup', (input) => {
   if(input.key === "Enter") {
-    onTodoAddBtn()
+    todoAddBtn.click()
   }
 })
 
@@ -75,7 +83,6 @@ function onMenuSelect(index) {
   }
   else if (index === 1) {
     dest = clockWrapper.offsetLeft
-    console.log(dest)
   }
   else {
     dest = todoWrapper.offsetLeft
@@ -83,7 +90,6 @@ function onMenuSelect(index) {
   window.scroll({
     top: 0,
     left: dest,
-    // behvior: 'smooth'
   })
   onToggleEvent()
 }
@@ -141,7 +147,6 @@ function stopwatch() {
 }
 
 //[시계]
-
 function renderTime() {
   let hour = new Date().getHours()
   let min = new Date().getMinutes()
@@ -156,38 +161,60 @@ function renderTime() {
 }
 
 //[투두]
+
+function updateToLocal() {
+  localStorage.setItem('todo', JSON.stringify(todoDataList))
+}
+
+function initDataList () {
+  todoDataList = JSON.parse(localStorage.getItem('todo'))
+}
+
 function onTodoAddBtn() {
   if (todoInput.value !== "") {
-    todoDataList.push(createTodoElement(todoInput.value))
+    todoDataList.push(createTodoObject(todoInput.value))
+    updateToLocal()
     renderTodoList()
-    todoInput.value = ""
+    todoInput.value = ""  
   }
 }
 
-function createTodoElement(input) {
-  const todoLiEl = document.createElement('li')
-  const todoDelBtn = document.createElement('button')
-  todoDelBtn.innerHTML = `<span class="material-symbols-outlined">skull</span>`
-  todoDelBtn.addEventListener('click', () => {
-     todoDataList.splice(todoDataList.indexOf(todoDelBtn.parentElement), 1);
-     renderTodoList()
-  })
+function createTodoObject(input) {
+  return { 
+    id: Date.now(),
+    input,
+    done: false
+  }
+}
 
-  const todoCheck = document.createElement('input')
-  todoCheck.type = 'checkbox'
-
-
-  const todoText = document.createElement('span')
-  todoText.textContent = todoInput.value
-  
-  todoLiEl.append(todoCheck)
-  todoLiEl.append(todoText)
-  todoLiEl.append(todoDelBtn)
-
-  return todoLiEl
+function onDelBtn(id) {
+  return todoDataList = todoDataList.filter( obj => obj.id !== id)
 }
 
 function renderTodoList() {
+  const liEls = todoDataList.map( obj => {
+    const todoCheck = document.createElement('input')
+    todoCheck.type = 'checkbox'
+    todoCheck.value = obj.done
+
+    const todoText = document.createElement('span')
+    todoText.textContent = obj.input
+
+    const todoDelBtn = document.createElement('button')
+    todoDelBtn.innerHTML = /* html */`<span class="material-symbols-outlined">skull</span>`
+    todoDelBtn.addEventListener('click', () => {
+      onDelBtn(obj.id)
+      updateToLocal()
+      renderTodoList()
+    })
+
+    const liEl = document.createElement('li')
+    liEl.append(todoCheck)
+    liEl.append(todoText)
+    liEl.append(todoDelBtn)
+
+    return liEl
+  })
   todoList.innerHTML = ""
-  todoDataList.forEach(el => todoList.append(el))
+  todoList.append(...liEls)
 }
