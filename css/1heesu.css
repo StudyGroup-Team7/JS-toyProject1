@@ -394,6 +394,8 @@ h1{
   list-style: none;
   line-height: 1.4em;
   padding-bottom: 0.65em;
+  display: flex;
+  align-items: center;
 }
 
 .todo-list .task li input[type="checkbox"]{
