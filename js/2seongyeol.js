@@ -29,6 +29,7 @@ const todoList = document.getElementById('todo-list')
 let count = 0
 let timer = false
 let recordCount = 0
+let timerId
 const INITIAL_DISPLAY = "00 : 00 : 00"
 //[투두]
 let todoDataList = []
@@ -112,6 +113,9 @@ function onPauseClicked() {
 function onResetClicked() {
   timer = false
   count = 0
+  console.log(timerId)
+  clearTimeout(timerId)
+  stopwatch()
   stopwatchContainer.classList.remove('active')
   startBtn.classList.remove('visually-disabled')
   puaseBtn.classList.remove('visually-disabled')
@@ -131,7 +135,7 @@ function stopwatch() {
     (count % 100).toString().padStart(2, 0) : 
     count.toString().padStart(2, 0)
 
-    const sec = count > 60 * 100 ?
+    const sec = count > 60 * 1000 ?
      (Math.floor(count / 100) % 60).toString().padStart(2, 0) : 
      Math.floor(count / 100).toString().padStart(2, 0)
 
@@ -141,9 +145,11 @@ function stopwatch() {
 
     display.textContent = ""
     display.textContent = `${min} : ${sec} : ${mil}`
+
+    timerId = setTimeout(stopwatch, 10)
   }
 
-  setTimeout(stopwatch, 10)
+  
 }
 
 //[시계]
