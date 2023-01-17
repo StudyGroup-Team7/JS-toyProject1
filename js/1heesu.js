@@ -5,7 +5,6 @@ const menuListEl = document.querySelectorAll('.main-nav-list ul li')
 const timerEl = document.querySelector('.timer')
 const clockEl = document.querySelector('.clock')
 const todoEl = document.querySelector('.todo')
-
 // MENU HANDLER
 menuToggelEl.addEventListener('click',showMenu)
 function showMenu(){
@@ -15,24 +14,22 @@ function showMenu(){
 }
 
 // HIDDEN HANDLER
-for(let li of menuListEl){
-  li.addEventListener('click', addHidden)
+for(let menu of menuListEl){
+  menu.addEventListener('click', addHidden)
 }
-let className = ''
+
+let menu = ''
 function addHidden(e){
-  className = e.target.className
-  if(className === 'CLOCK'){
-    console.log(className)
+  menu = e.target.text
+  if(menu === 'CLOCK'){
     clockEl.classList.remove('hidden')
     timerEl.classList.add('hidden')
     todoEl.classList.add('hidden')
-  }else if(className==='TIMER'){
-    console.log(className)
+  }else if(menu==='TIMER'){
     timerEl.classList.remove('hidden')
     clockEl.classList.add('hidden')
     todoEl.classList.add('hidden')
   }else{
-    console.log(className)
     timerEl.classList.add('hidden')
     clockEl.classList.add('hidden')
     todoEl.classList.remove('hidden')
