@@ -8,64 +8,82 @@
   <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="/css/1heesu.css">
   <!-- JS -->
   <script tpye="module" defer src="/js/1heesu.js"></script>
 </head>
-<body><div class="container">
-  <!-- HEADER -->
-  <div class="header">MAKING JS PROJECT</div>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header class="main-header">
+      <nav>
+          <div class="masthead active-el">
+              <h1><a href="/source/1heesu.html">MAKING JS PROJECT</a></h1>
+              <div id="menu-toggle" class="menu-toggle active-el">
+                  <div class="one"></div>
+                  <div class="two"></div>
+                  <div class="three"></div>
+              </div>
+          </div>
+          <div class="main-nav-list active-el">
+              <ul>
+                  <li class="MAIN"><a href="/index.html">MAIN</a></li>
+                  <li class="CLOCK">CLOCK</li>
+                  <li class="TIMER">TIMER</li>
+                  <li class="TODO">TODO</li>
+              </ul>
+          </div>
+      </nav>
+    </header>
 
-  <!-- TIMER -->
-  <section class="timer hidden">
-    <div class="inner">
-      <div class="timer__time">
-        <span class="minutes">00</span> :
-        <span class="secondes">00</span> :
-        <span class="tens">00</span> 
+    <!-- TIMER -->
+    <section class="timer hidden">
+      <div class="inner">
+        <div class="timer__time">
+          <span class="minutes">00</span> :
+          <span class="secondes">00</span> :
+          <span class="tens">00</span> 
+        </div>
+        <div class="timer__controler">
+          <button class="start btn">START</button>
+          <button class="stop btn">STOP</button>
+          <button class="reset btn">RESET</button>
+        </div>
       </div>
-      <div class="timer__controler">
-        <button class="start btn">START</button>
-        <button class="stop btn">STOP</button>
-        <button class="reset btn">RESET</button>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CLOCK -->
-  <section class="clock">
-    <div class="inner">
-      <div class="time">
-        <span class="hour"></span><span class="blink">:</span><span class="minute"></span>
+    <!-- CLOCK -->
+    <section class="clock">
+      <div class="inner">
+        <div class="time">
+          <span class="hour"></span><span class="blink">:</span><span class="minute"></span>
+        </div>
+        <div class="days">
+          <div class="date"></div>
+          <div class="day"></div>
+        </div>
       </div>
-      <div class="days">
-        <div class="date"></div>
-        <div class="day"></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TODO LIST -->
-  <section class="todo hidden">
-    <div class="inner">
-      <div class="heading">TODO LIST</div>
-      <form class="todo-form">
-        <input type="text" placeholder="Enter List">
-        <button>ADD</button>
-      </form>
-    </div>
-    <div class="todo-list">
-      <ul class="task">
-        <li></li>
-      </ul>
-    </div>
-  </section>
-  <!-- NAV BAR -->
-  <aside>
-  </aside>
-</div>
+    <!-- TODO LIST -->
+    <section class="todo hidden">
+      <div class="inner">
+        <div class="heading">TODO LIST</div>
+        <form class="todo-form">
+          <input type="text" placeholder="Enter List">
+          <button>ADD</button>
+        </form>
+      </div>
+      <div class="todo-list">
+        <ul class="task">
+          <li></li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
 </body>
 </html>

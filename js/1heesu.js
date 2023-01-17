@@ -1,3 +1,46 @@
+// NAV MENU
+const activeEl = document.querySelectorAll('.active-el')
+const menuToggelEl = document.querySelector('.menu-toggle')
+const menuListEl = document.querySelectorAll('.main-nav-list ul li')
+const timerEl = document.querySelector('.timer')
+const clockEl = document.querySelector('.clock')
+const todoEl = document.querySelector('.todo')
+
+// MENU HANDLER
+menuToggelEl.addEventListener('click',showMenu)
+function showMenu(){
+  for(let active of activeEl){
+    active.classList.toggle('active')
+  }
+}
+
+// HIDDEN HANDLER
+for(let li of menuListEl){
+  li.addEventListener('click', addHidden)
+}
+let className = ''
+function addHidden(e){
+  className = e.target.className
+  if(className === 'CLOCK'){
+    console.log(className)
+    clockEl.classList.remove('hidden')
+    timerEl.classList.add('hidden')
+    todoEl.classList.add('hidden')
+  }else if(className==='TIMER'){
+    console.log(className)
+    timerEl.classList.remove('hidden')
+    clockEl.classList.add('hidden')
+    todoEl.classList.add('hidden')
+  }else{
+    console.log(className)
+    timerEl.classList.add('hidden')
+    clockEl.classList.add('hidden')
+    todoEl.classList.remove('hidden')
+  }
+  showMenu()
+}
+
+///// TIMER
 const start = document.querySelector('.start')
 const stop = document.querySelector('.stop')
 const reset = document.querySelector('.reset')
@@ -72,7 +115,7 @@ function onAppendTimes(){
   const date = new Date().getDate()
   const day = new Date().getDay()
 
-  hourEl.textContent = hour
+  hourEl.textContent = String(hour).padStart(2,'0')
   minuteEl.textContent = minute
   dateEl.textContent = `${year}.${month}.${date}`
   dayEl.textContent = `${days[day]}`
@@ -83,18 +126,17 @@ const todoFormEl = document.querySelector('.todo-form')
 const todoInputEl = document.querySelector('.todo-form>input')
 const todoBtnEl = document.querySelector('.todo-form>button')
 const taskEl = document.querySelector('.task')
-// const deletBtn = document.querySelector('.task li button')
 
 
+// SUBMIT
 todoFormEl.addEventListener('submit',onSubmitHandler)
-
 function onSubmitHandler(e){
   e.preventDefault()
   let task = todoInputEl.value
   todoInputEl.value = ''
   onAddTask(task)
 }
-
+// ADD LIST
 function onAddTask(task){
   const liEl = document.createElement('li')
   const inputEl = document.createElement('input')
@@ -109,7 +151,7 @@ function onAddTask(task){
   taskEl.append(liEl)
   btnEl.addEventListener('click',onDeletTask)
 }
-
+// DELET LIST
 function onDeletTask(e){
   const liEl = e.target.parentElement
   liEl.remove()
