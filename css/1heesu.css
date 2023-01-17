@@ -127,7 +127,7 @@ h1{
     top: 0;
     height: 100vh;
     width: 0vw;
-    transition: all .1s ease-in-out .3s;
+    transition: all .1s ease-in-out .4s;
     z-index: 4;
 }
 .main-nav-list::before{
@@ -151,11 +151,10 @@ h1{
   position: absolute;
   left: 0;
   right: 0;
-  top: -80%;
+  top: -100%;
   z-index: 3;
   opacity: 0;
-  transition-duration: .4s;
-  transition-timing-function: ease-in-out;
+  transition: .6s ease-in-out;
 }
 
 .main-header .main-nav-list ul li{
@@ -276,16 +275,32 @@ h1{
 /******* CLOCK ******/
 
 .clock{
+  font-size: 15rem;
   padding-top: 22rem;
 }
 
 .clock .time{
-  font-size: 1.5em;
+  /* font-size: 1.5em; */
+  width: 4em;
   padding-bottom: 0.6em;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clock .hour,
+.clock .minute{
+  font-size: 1.5em;
+  width: 1.2em;
+  text-align: center;
 }
 
 .clock .blink{
+  font-size: 1.5em;
   animation: blinking 1s step-end infinite;
+  position: absolute;
+  left: 1.2em;
+  top: -0.09em;
 }
 
 @keyframes blinking {
@@ -322,10 +337,6 @@ h1{
   font-size: 3rem;
   font-weight: 600;
   padding-bottom: 2rem;
-}
-
-.todo .inner{
-
 }
 
 .todo form{
