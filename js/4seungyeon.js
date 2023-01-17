@@ -1,3 +1,4 @@
+// STOP-WATCH
 const secondEl = document.querySelector('.second')
 const milliSecondEl = document.querySelector('.milli-second')
 const startButtonEl = document.querySelector('.btn-start')
@@ -58,3 +59,36 @@ function startTimer() {
     milliSecondEl.innerHTML = `0${msec}`
   }
 }
+
+// CLOCK
+const clockEl = document.querySelector('.clock')
+const timeEl = clockEl.querySelector('.time')
+
+function renderTime() {
+  const date = new Date()
+  // 현지 시간 기준 시(0–23)를 반환
+  let h = date.getHours()
+  // 현지 시간 기준 분(0–59)을 반환
+  let m = date.getMinutes()
+  // 현지 시간 기준 초(0–59)를 반환
+  let s = date.getSeconds()
+
+  let meridiem = h > 11 ? 'PM' : 'AM'
+
+  if (s < 10) {
+    s = `0${s}`
+  }
+
+  if (m < 10) {
+    m = `0${m}`
+  }
+
+  if (h < 10) {
+    h = `0${h}`
+  }
+
+  const time = `${h}:${m}:${s} ${meridiem}`
+  timeEl.textContent = time
+}
+
+setInterval(renderTime, 1000)
