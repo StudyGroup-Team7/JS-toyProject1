@@ -92,3 +92,23 @@ function renderTime() {
 }
 
 setInterval(renderTime, 1000)
+
+// TODO-LIST
+const todoListForm = document.querySelector('.todo-list-form')
+const inputEl = todoListForm.querySelector('input')
+const addButtonEl = todoListForm.querySelector('.add-button')
+const taskListEl = document.querySelector('.task-list')
+
+addButtonEl.addEventListener('click', function () {
+  taskListEl.innerHTML += /* html  */ `
+    <li class="task-item">
+      <input type="checkbox" />
+
+      <p class="task">${inputEl.value}</p>
+
+      <button class="delete-button" type="button">
+        <span class="material-icons">delete</span>
+      </button>
+    </li>
+  `
+})
