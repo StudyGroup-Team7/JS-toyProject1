@@ -1,3 +1,10 @@
+const menuEl = document.querySelector(".header__top__menu");
+const ulEl = document.querySelector("ul");
+menuEl.addEventListener("click", showMenu);
+function showMenu() {
+  ulEl.classList.toggle("hidden");
+}
+
 // stopwatch
 const timerEl = document.querySelector(".timer");
 const startEl = document.querySelector(".start");
@@ -6,6 +13,16 @@ const resetEl = document.querySelector(".reset");
 
 let seconds = 0;
 let interval;
+function start() {
+  interval = setInterval(timer, 1000);
+}
+function stop() {
+  clearInterval(interval);
+}
+function reset() {
+  clearInterval(interval);
+  timerEl.textContent = "00:00:00";
+}
 
 startEl.addEventListener("click", start);
 stopEl.addEventListener("click", stop);
@@ -18,16 +35,6 @@ function timer() {
   const secs = String(seconds % 60).padStart(2, "0");
 
   timerEl.textContent = ` ${hrs}:${mins}:${secs}`;
-}
-function start() {
-  interval = setInterval(timer, 1000);
-}
-function stop() {
-  clearInterval(interval);
-}
-function reset() {
-  clearInterval(interval);
-  timerEl.textContent = "00:00:00";
 }
 
 // month. date. day.
@@ -53,7 +60,6 @@ getCalendar();
 // clock
 
 function getClock() {
-  // const clockEl = document.querySelector(".clock-wrap");
   const date = new Date();
   const todayHr = String(date.getHours()).padStart(2, "0");
   const todayMin = String(date.getMinutes()).padStart(2, "0");
@@ -69,3 +75,10 @@ function getClock() {
 
 setInterval(getClock, 1000);
 getClock();
+
+// 콘솔창 이스터 에그
+console.log(
+  "%cWelcome to %cHyewon's website🐠",
+  "color: pink",
+  "color: white; font-style: italic; background-color: cornflowerblue;padding: 4px; border-radius: 4px; font-size:32px"
+);

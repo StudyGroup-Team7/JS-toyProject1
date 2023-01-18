@@ -24,7 +24,7 @@ function todoSubmit(event) {
 
 todoForm.addEventListener("submit", todoSubmit);
 
-// 새로운 할 일 추가 & 삭제 버튼 구현
+/** 새로운 할 일 추가 & 삭제 버튼 구현*/
 function paintTodo(taskObj) {
   const li = document.createElement("li");
   const span = document.createElement("span");
@@ -52,3 +52,8 @@ if (getTodos !== null) {
   toDos = parsedTodos;
   parsedTodos.forEach(paintTodo);
 }
+
+
+Array.forEach(f(F){
+  console.
+})

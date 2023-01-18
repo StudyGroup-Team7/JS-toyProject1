@@ -1,13 +1,50 @@
 .todo-container {
+  width: 400px;
+  height: 300px;
+  background-color: var(--blue-color);
+  position: absolute;
+  right: 10%;
+  top: 25%;
+  border-radius: 10px;
+}
+.todo-container .todo-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
 }
 .todo-container .todo-txt {
+  width: 300px;
+  height: 40px;
+  font-family: var(--text-type);
+  padding-left: 6px;
+  border-radius: 10px;
+  border: 1px cornflowerblue solid;
 }
 .todo-container .todo-txt:focus {
   outline: none;
   cursor: pointer;
+  background-color: var(--pink-color);
 }
 
 .todo-container .todo-btn {
+  width: 60px;
+  height: 20px;
+  font-family: var(--text-type);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
 }
-.todo-list {
+.todo-container .todo-btn:hover {
+  background-color: var(--pink-color);
+}
+
+.todo-container .todo-list {
+  margin: 20px 40px;
+}
+
+.hidden {
+  display: none;
 }

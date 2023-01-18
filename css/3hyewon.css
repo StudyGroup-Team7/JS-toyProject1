@@ -1,15 +1,68 @@
+:root {
+  --blue-color: #d6eef8;
+  --pink-color: #f8e1d6;
+  --text-type: "Pacifico", cursive;
+}
 body {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #d6eef8, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
+  margin: 0;
+  font-family: var(--text-type);
+}
+a {
+  color: black;
+  text-decoration: none;
 }
 * {
   box-sizing: border-box;
-  font-family: "DM Sans", sans-serif;
-  font-family: "Nanum Myeongjo", serif;
 }
-
+/* HEARER */
+.header__top {
+  /* %로 설정하면 안 먹힘. 왜?? */
+  height: 60px;
+  background-color: #d6eef8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.header__top .header__top__logo .material-symbols-outlined {
+  display: inline-flex;
+  vertical-align: middle;
+  font-size: 36px;
+}
+.header__top .header__top__menu {
+  margin-left: 30px;
+  color: #783114;
+  cursor: pointer;
+}
+.header__menu {
+  width: 100%;
+  background-color: #f8e1d6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  position: absolute;
+  font-size: 30px;
+}
+.header__menu .header__menu__item {
+  font-size: 24px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__menu__item:hover {
+  background-color: #94c8df;
+}
+.hidden {
+  display: none;
+}
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -20,4 +73,50 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+main .login-container {
+  position: absolute;
+  height: 70px;
+  width: 600px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .login-container .login-txt {
+  font-family: "Pacifico", cursive;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding-left: 6px;
+  border: 1px cornflowerblue solid;
+}
+main .login-container .login-txt:focus {
+  background-color: #f8e1d6;
+  outline: none;
+}
+main .login-container .login-btn {
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Pacifico", cursive;
+  text-align: center;
+}
+main .login-container .login-btn:hover {
+  background-color: #f8e1d6;
+}
+main .greetings {
+  font-family: "Pacifico", cursive;
+  color: #44626e;
+  font-size: 24px;
 }
