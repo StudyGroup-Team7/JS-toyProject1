@@ -98,17 +98,55 @@ const todoListForm = document.querySelector('.todo-list-form')
 const inputEl = todoListForm.querySelector('input')
 const addButtonEl = todoListForm.querySelector('.add-button')
 const taskListEl = document.querySelector('.task-list')
+const deleteButtonEl = document.querySelector('.delete-button')
+
+// addButtonEl.addEventListener('click', function () {
+//   taskListEl.innerHTML += /* html  */ `
+//     <li class="task-item">
+//       <input type="checkbox" />
+
+//       <p class="task">${inputEl.value}</p>
+
+//       <button class="delete-button" type="button">
+//         <span class="material-icons">delete</span>
+//       </button>
+//     </li>
+//   `
+// })
 
 addButtonEl.addEventListener('click', function () {
-  taskListEl.innerHTML += /* html  */ `
-    <li class="task-item">
-      <input type="checkbox" />
+  const liEl = document.createElement('li')
+  liEl.className = 'task-item'
 
-      <p class="task">${inputEl.value}</p>
+  const checkboxEl = document.createElement('input')
+  checkboxEl.type = 'checkbox'
 
-      <button class="delete-button" type="button">
-        <span class="material-icons">delete</span>
-      </button>
-    </li>
-  `
+  const pEl = document.createElement('p')
+  pEl.className = 'task'
+  pEl.textContent = inputEl.value
+
+  const deleteButtonEl = document.createElement('button')
+  deleteButtonEl.className = 'delete-button'
+  deleteButtonEl.type = 'button'
+
+  deleteButtonEl.addEventListener('click', deleteTodo)
+
+  const spanEl = document.createElement('span')
+  spanEl.className = 'material-icons'
+  spanEl.textContent = 'delete'
+
+  liEl.appendChild(checkboxEl)
+  liEl.appendChild(pEl)
+  liEl.appendChild(deleteButtonEl)
+  deleteButtonEl.appendChild(spanEl)
+
+  taskListEl.appendChild(liEl)
+
+  inputEl.value = ''
+  inputEl.focus()
 })
+
+function deleteTodo(e) {
+  const targetItemEl = e.target.closest('.task-item')
+  taskListEl.removeChild(targetItemEl)
+}
