@@ -1,3 +1,33 @@
+const menuButton = document.querySelector('.menu-button')
+const sidebar = document.querySelector('.sidebar')
+const sidebarButtonEl = sidebar.querySelectorAll('button')
+
+const stopWatch = document.querySelector('.stop-watch')
+const clock = document.querySelector('.clock')
+const todoList = document.querySelector('.todo-list')
+
+sidebarButtonEl.forEach((button) => {
+  button.addEventListener('click', function (e) {
+    if (e.target.classList.contains('is-watch')) {
+      stopWatch.classList.add('is-active')
+      clock.classList.remove('is-active')
+      todoList.classList.remove('is-active')
+    } else if (e.target.classList.contains('is-clock')) {
+      stopWatch.classList.remove('is-active')
+      clock.classList.add('is-active')
+      todoList.classList.remove('is-active')
+    } else if (e.target.classList.contains('is-todo')) {
+      stopWatch.classList.remove('is-active')
+      clock.classList.remove('is-active')
+      todoList.classList.add('is-active')
+    }
+  })
+})
+
+menuButton.addEventListener('click', function () {
+  sidebar.classList.toggle('is-active')
+})
+
 // STOP-WATCH
 const secondEl = document.querySelector('.second')
 const milliSecondEl = document.querySelector('.milli-second')
@@ -99,20 +129,6 @@ const inputEl = todoListForm.querySelector('input')
 const addButtonEl = todoListForm.querySelector('.add-button')
 const taskListEl = document.querySelector('.task-list')
 const deleteButtonEl = document.querySelector('.delete-button')
-
-// addButtonEl.addEventListener('click', function () {
-//   taskListEl.innerHTML += /* html  */ `
-//     <li class="task-item">
-//       <input type="checkbox" />
-
-//       <p class="task">${inputEl.value}</p>
-
-//       <button class="delete-button" type="button">
-//         <span class="material-icons">delete</span>
-//       </button>
-//     </li>
-//   `
-// })
 
 addButtonEl.addEventListener('click', function () {
   const liEl = document.createElement('li')
