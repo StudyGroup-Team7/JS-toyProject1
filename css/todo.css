@@ -1,10 +1,12 @@
 .todo-container {
-  width: 400px;
-  height: 300px;
+  width: var(--box-width);
+  height: var(--box-height);
+  border: var(--box-border);
   background-color: var(--blue-color);
   position: absolute;
-  right: 10%;
-  top: 25%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 10px;
 }
 .todo-container .todo-box {
@@ -16,21 +18,20 @@
 .todo-container .todo-txt {
   width: 300px;
   height: 40px;
-  font-family: var(--text-type);
+  font-family: var(--font-type);
   padding-left: 6px;
   border-radius: 10px;
-  border: 1px cornflowerblue solid;
+  border: var(--box-border);
 }
 .todo-container .todo-txt:focus {
   outline: none;
   cursor: pointer;
-  background-color: var(--pink-color);
 }
 
 .todo-container .todo-btn {
   width: 60px;
   height: 20px;
-  font-family: var(--text-type);
+  font-family: var(--font-type);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,11 +39,21 @@
   border-radius: 5px;
 }
 .todo-container .todo-btn:hover {
-  background-color: var(--pink-color);
+  background-color: var(--nav-color);
+  color: #fff;
 }
 
 .todo-container .todo-list {
   margin: 20px 40px;
+}
+.todo-container .todo-list li {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+.todo-container .todo-list button:hover {
+  background-color: var(--nav-color);
+  color: #fff;
 }
 
 .hidden {

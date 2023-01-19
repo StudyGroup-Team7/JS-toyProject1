@@ -1,15 +1,13 @@
-body {
-  font-family: "Pacifico", cursive;
-}
-
 .cal-clock-container {
-  width: 300px;
-  height: 200px;
+  width: var(--box-width);
+  height: var(--box-height);
+  border: var(--box-border);
   border-radius: 10px;
   background-color: var(--blue-color);
   position: absolute;
-  top: 60%;
-  left: 10%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: space-around;

@@ -1,6 +1,7 @@
 .stopwatch-box {
-  width: 300px;
-  height: 200px;
+  width: var(--box-width);
+  height: var(--box-height);
+  border: var(--box-border);
   background-color: var(--blue-color);
   display: flex;
   flex-direction: column;
@@ -9,8 +10,9 @@
   border-radius: 10px;
   /* 정가운데 정렬 */
   position: absolute;
-  top: 25%;
-  left: 10%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .stopwatch-box .timer {
