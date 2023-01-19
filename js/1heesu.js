@@ -2,9 +2,9 @@
 const activeEl = document.querySelectorAll('.active-el')
 const menuToggelEl = document.querySelector('.menu-toggle')
 const menuListEl = document.querySelectorAll('.main-nav-list ul li')
-const timerEl = document.querySelector('.timer')
-const clockEl = document.querySelector('.clock')
-const todoEl = document.querySelector('.todo')
+const sectionEl = document.querySelectorAll('.section')
+const arr = [...sectionEl]
+
 // MENU HANDLER
 menuToggelEl.addEventListener('click',showMenu)
 function showMenu(){
@@ -12,29 +12,18 @@ function showMenu(){
     active.classList.toggle('active')
   }
 }
-// HIDDEN HANDLER
-for(let menu of menuListEl){
-  menu.addEventListener('click', addHidden)
-}
 
-let menu = ''
-function addHidden(e){
-  menu = e.target.text
-  if(menu === 'CLOCK'){
-    clockEl.classList.remove('hidden')
-    timerEl.classList.add('hidden')
-    todoEl.classList.add('hidden')
-  }else if(menu==='TIMER'){
-    timerEl.classList.remove('hidden')
-    clockEl.classList.add('hidden')
-    todoEl.classList.add('hidden')
-  }else{
-    timerEl.classList.add('hidden')
-    clockEl.classList.add('hidden')
-    todoEl.classList.remove('hidden')
-  }
-  showMenu()
-}
+menuListEl.forEach((list)=>{
+  list.addEventListener('click',(e)=>{
+    arr.forEach(e=>{
+      e.classList.add('hidden')
+    })
+    const className = e.currentTarget.getAttribute("class").toLowerCase()
+    const element = document.querySelector(`.${className}`)
+    element.classList.remove('hidden')
+    showMenu()
+  })
+})
 
 
 ///// CLOCK
