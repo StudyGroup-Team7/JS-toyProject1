@@ -1,6 +1,7 @@
 const menuButton = document.querySelector('.menu-button')
 const sidebar = document.querySelector('.sidebar')
 const sidebarButtonEl = sidebar.querySelectorAll('button')
+const overlay = document.querySelector('.overlay')
 
 const stopWatch = document.querySelector('.stop-watch')
 const clock = document.querySelector('.clock')
@@ -26,6 +27,7 @@ sidebarButtonEl.forEach((button) => {
 
 menuButton.addEventListener('click', function () {
   sidebar.classList.toggle('is-active')
+  overlay.classList.toggle('is-active')
 })
 
 // STOP-WATCH
