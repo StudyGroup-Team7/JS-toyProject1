@@ -22,15 +22,17 @@ body,
 
 /* STOP WATCH */
 .stop-watch {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: orange;
   text-align: center;
+}
 
-  display: none;
+.stop-watch.is-active {
+  display: flex;
 }
 
 .stop-watch .title {
@@ -73,7 +75,7 @@ body,
 
 /* CLOCK */
 .clock {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -81,19 +83,25 @@ body,
   color: #17d3fe;
   letter-spacing: 7px;
   background-color: #000;
+}
 
-  display: none;
+.clock.is-active {
+  display: flex;
 }
 
 /* TODO LISt */
 .todo-list {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
   background-color: #ffd4d4;
+}
+
+.todo-list.is-active {
+  display: flex;
 }
 
 .todo-list .todo-list-header {
