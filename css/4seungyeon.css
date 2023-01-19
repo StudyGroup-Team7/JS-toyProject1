@@ -169,3 +169,41 @@ body,
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  padding: 20px;
+  background-color: #b93f71;
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+}
+
+.sidebar.is-active {
+  transform: translateX(0);
+}
+
+.sidebar .sidebar-nav .nav-list .nav-item {
+  padding: 6px 12px;
+}
+
+.sidebar .sidebar-nav .nav-list .nav-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.sidebar .sidebar-nav .nav-list .nav-item button {
+  font-size: 30px;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
+}
+
+.sidebar .sidebar-nav .nav-list .nav-item button:hover {
+  color: #fff;
+}
