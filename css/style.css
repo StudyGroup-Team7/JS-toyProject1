@@ -41,7 +41,6 @@ header nav .nav-bar {
   align-items: center;
   padding-left: 10px;
 }
-
 header nav .nav-bar .logo {
   font-size: 22px;
   font-weight: 700;
@@ -90,14 +89,13 @@ header nav .nav-menu .dark-mode span {
   margin-left: 20px;
   cursor: pointer;
 }
-.hamburger-icon {
-  display: none;
+header nav .hamburger-icon {
   cursor: pointer;
 }
 
-ul.active {
+header nav .nav-wrap .nav-menu.active {
   position: fixed;
-  width: 300px;
+  max-width: 150px;
   height: 100vh;
   background: #2c3e50;
   top: 70px;
@@ -109,7 +107,7 @@ ul.active {
   flex-direction: column;
   justify-content: space-around;
 }
-ul.active li {
+header nav .nav-wrap .nav-menu.active li {
   color: white !important;
 }
 /* ul.active li:hover {
@@ -121,24 +119,24 @@ ul.active li {
   }
 } hover 했을 때 색상 변화 안됨. 수정 필요.*/
 
-ul.active li:hover::after {
+header nav .nav-wrap .nav-menu.active li:hover::after {
   display: none;
 }
 
 @media (max-width: 790px) {
-  .hamburger-icon {
-    display: block;
+  .hidden {
+    opacity: 1 !important;
   }
 }
 .hidden {
-  display: none;
+  opacity: 0;
 }
+
 /* LOG-IN 창 */
 
 main .login-container {
   position: absolute;
   height: 70px;
-  width: 600px;
   margin: auto;
   top: 0;
   bottom: 0;
@@ -151,7 +149,7 @@ main .login-container {
 
 main .login-container .login-txt {
   font-family: var(--font-type);
-  width: 300px;
+  width: 200px;
   height: 50px;
   border-radius: 10px;
   border: none;
@@ -177,8 +175,14 @@ main .login-container .login-btn {
 main .login-container .login-btn:hover {
   background-color: #f8e1d6;
 }
+.hide {
+  display: none;
+}
 main .greetings {
   font-family: var(--font-type);
   color: #44626e;
   font-size: 24px;
+  position: fixed;
+  top: 80px;
+  right: 10px;
 }
