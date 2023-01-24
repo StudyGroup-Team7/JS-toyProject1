@@ -108,14 +108,10 @@ body {
 
 /* toggle menu */
 
-.wrapper-nav {
-  
-}
-
 .toggle-menu {
   position: absolute;
   cursor: pointer;
-  top: 4vh;
+  top: 3vh;
   left: 94vw;
 }
 
@@ -123,57 +119,79 @@ body {
   background-color: #fff;
   height: 7px;
   width: 55px;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
   border-radius: 5px;
 }
 
-.toggle-menu .one {
-  transform: translate(0,9px) rotate(45deg);
-  margin-top: 5px;
+.menu::before {
+  left: 0;
 }
 
-.toggle-menu .three {
-  transform: translate(0,-9px) rotate(-45deg);
-  margin-top: 5px;
-}
-
-.toggle-menu .two {
-  display: none;
+.menu::after {
+  right: 0;
 }
 
 .menu .menu-list {
   color: #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.menu .menu-list::before {
-  display: block;
-  content: '';
-  background-color: rgb(150, 150, 150);
-  width: 30vw;
-  height: 100vh;
-  transition: all 100ms ease-in-out 300ms;
-}
-
-.menu .menu-list::after {
-  display: block;
-  content: '';
-  background-color: rgb(150, 150, 150);
-  width: 30vw;
-  height: 100vh;
-  transition: all 100ms ease-in-out 300ms;
 }
 
 .menu .menu-list .menu-list-wrpper {
-  font-size: 50px;
-  display: flex;
-  flex-direction: column;
+  font-size: 60px;
   text-align: center;
-  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .menu .menu-list .menu-list-wrpper .menu-list-item {
   margin-top: 30px;
+  cursor: pointer;
 }
+
+.menu .menu-list .menu-list-wrpper .menu-list-item:hover {
+  color: rgb(170, 170, 170);
+}
+
+
+
+/* toggle menu active */
+
+.wrapper-nav .active .one {
+  transform: translate(0,9px) rotate(45deg);
+  margin-top: 5px;
+}
+
+.wrapper-nav .active .three {
+  transform: translate(0,-9px) rotate(-45deg);
+  margin-top: 5px;
+}
+
+.wrapper-nav .active .two {
+  display: none;
+}
+
+.menu .menu-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu .active::before {
+  display: block;
+  content: '';
+  background-color: rgb(150, 150, 150);
+  width: 30vw;
+  height: 100vh;
+  transition: all 100ms ease-in-out 300ms;
+}
+
+.menu .active::after {
+  display: block;
+  content: '';
+  background-color: rgb(150, 150, 150);
+  width: 30vw;
+  height: 100vh;
+  transition: all 100ms ease-in-out 300ms;
+}
+

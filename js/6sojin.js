@@ -88,11 +88,6 @@ const hide = () => {
   }
 }
 
-toggleMenuElement.addEventListener('click',toggleMenu);
-toggleBar.addEventListener('click', function () {
-  for(var activated = 0; activated < activeElements.length; activated++)
-     {activeElements[activated].classList.toggle("active");}
-});
 
 const showStopwatch = () => {
   hideMenu();
@@ -217,3 +212,15 @@ window.onload = () => {
   init();
 };
 
+
+const activeElements = document.querySelectorAll('.active-element');
+
+const act = () => {
+  console.dir(activeElements);
+  for (let activeted = 0; activeted < activeElements.length; activeted++){
+    activeElements[activeted].classList.toggle('active');
+  }
+  console.dir(activeElements);
+};
+
+let activeToggle = toggleBar.addEventListener('click', act);
