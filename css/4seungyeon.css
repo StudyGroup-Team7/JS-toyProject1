@@ -1,0 +1,231 @@
+html,
+body,
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.menu-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  width: 50px;
+  height: 50px;
+  color: #0081ff;
+  cursor: pointer;
+}
+
+.menu-button .material-icons {
+  font-size: 40px;
+}
+
+/* STOP WATCH */
+.stop-watch {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffa500;
+  text-align: center;
+}
+
+.stop-watch.is-active {
+  display: flex;
+}
+
+.stop-watch .title {
+  margin-bottom: 40px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.stop-watch .timer {
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #fff;
+}
+
+.stop-watch .button-group .btn {
+  width: 200px;
+  height: 60px;
+  background-color: transparent;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 0.12em;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+}
+
+.stop-watch .button-group .btn:hover {
+  background-color: #fff;
+  color: orange;
+}
+
+.stop-watch .button-group .btn:not(:last-child) {
+  margin-right: 18px;
+}
+
+/* CLOCK */
+.clock {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 60px;
+  color: #17d3fe;
+  letter-spacing: 7px;
+  background-color: #000;
+}
+
+.clock.is-active {
+  display: flex;
+}
+
+/* TODO LISt */
+.todo-list {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffd4d4;
+}
+
+.todo-list.is-active {
+  display: flex;
+}
+
+.todo-list .todo-list-header {
+  margin-bottom: 16px;
+}
+
+.todo-list .todo-list-header .title {
+  margin-bottom: 12px;
+}
+
+.todo-list .todo-list-header .todo-list-form {
+  display: flex;
+  height: 34px;
+}
+
+.todo-list .todo-list-header .todo-list-form input {
+  width: 300px;
+  padding: 6px 12px;
+  margin-right: 4px;
+  border: 2px solid #cde990;
+  border-radius: 4px;
+  outline: none;
+}
+
+.todo-list .todo-list-header .todo-list-form .add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todo-list .todo-list-body .task-list {
+  width: 366px;
+  max-height: 300px;
+  padding: 0 12px;
+  overflow: auto;
+}
+
+.todo-list .todo-list-body .task-list .task-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  margin-bottom: 12px;
+}
+
+.todo-list .todo-list-body .task-list .task-item:not(:last-child) {
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.todo-list .todo-list-body .task-list .task-item input {
+  margin-right: 16px;
+}
+
+.todo-list .todo-list-body .task-list .task-item .task {
+  flex-grow: 1;
+}
+
+.todo-list .todo-list-body .task-list .task-item .delete-button {
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 280px;
+  height: 100vh;
+  padding: 20px;
+  background-color: #b93f71;
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+}
+
+.sidebar.is-active {
+  transform: translateX(0);
+}
+
+.sidebar .sidebar-nav .nav-list .nav-item {
+  padding: 6px 12px;
+}
+
+.sidebar .sidebar-nav .nav-list .nav-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.sidebar .sidebar-nav .nav-list .nav-item button {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
+}
+
+.sidebar .sidebar-nav .nav-list .nav-item button:hover {
+  color: #0081ff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease-in-out;
+}
+
+.overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}

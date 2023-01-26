@@ -1,0 +1,317 @@
+html {
+  background-color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 1256px;
+  padding-top: .5rem;
+  width: 93%;
+}
+
+.main-header a {
+  letter-spacing: .18rem;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.masthead {
+  position: relative;
+  z-index: 10000;
+  height: 150px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, black, #333333);
+}
+
+.masthead h1 {
+  transition-delay: 450ms;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+.masthead h1 a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 40px;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  width: 55px;
+  z-index: 30000;
+  margin: 10px;
+}
+
+.menu-toggle div {
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, .3);
+  height: 7px;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(.13, .24, .35, 1.64);
+}
+
+.menu-toggle .one,
+.menu-toggle .two {
+  margin-bottom: 7px;
+}
+
+.main-nav-list::before{
+  left: 0;
+}
+.main-nav-list::after{
+  right: 0;
+}
+
+
+.main-nav-list::before,
+.main-nav-list::after {
+  background-color: #111;
+  content: "";
+  position: absolute;
+  top: 150px;
+  height: 100vh;
+  width: 0vw;
+  transition: all 100ms ease-in-out 300ms;
+  z-index: 5000000;
+}
+
+.main-nav-list ul {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  z-index: 3000;
+}
+
+.main-nav-list ul li {
+  margin-top: 100px;
+}
+
+.main-nav-list a {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  opacity: 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition-delay: 130ms;
+}
+
+
+.menu-toggle.active .one {
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, .4);
+  transform: translate(0, 14px) rotate(45deg);
+}
+
+.menu-toggle.active .two {
+  background-color: transparent;
+  box-shadow: none;
+  transform: translateX(-55px);
+}
+
+.menu-toggle.active .three {
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, .4);
+  transform: translate(0, -14px) rotate(-45deg);
+}
+
+.main-nav-list.active::before,
+.main-nav-list.active::after {
+  width: 25%;
+  /*     transition-duration: 1000ms; */
+}
+
+.main-nav-list.active ul {
+  top: 50%;
+  margin: 150px 0;
+  transform: translate(-50%, -50%);
+  transition-delay: 560ms;
+  transition-duration: 240ms;
+  width: 50%;
+  z-index: 5000000;
+  height: 100%;
+  background-color: #333;
+}
+
+.main-nav-list.active a {
+  transition-delay: 600ms;
+  opacity: 1;
+}
+
+
+
+/*** Just getting silly now ***************************/
+.wrapper.active p {
+  color: rgb(50, 101, 134);
+  transition-delay: 150ms;
+  transition-duration: 350ms;
+}
+
+
+/*                   스톱워치 */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.main-list-stop-watch {
+  position: absolute;
+  background-color: #333333;
+  z-index: 100;
+  width: 100%;
+  margin: 0 auto;
+  width: 1256px;
+  height: 1000px;
+}
+
+
+.main_head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-family: 'Black Han Sans', sans-serif;
+  text-decoration: none;
+}
+
+.stop_watch {
+  margin-top: 100px;
+
+}
+
+.stop_watch_time {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  color: #ffffff;
+  font-size: 100px;
+  font-weight: lighter;
+}
+
+.stop_watch_btn button {
+  width: 150px;
+  height: 50px;
+  margin: 100px 20px 50px 20px;
+  border-radius: 50px;
+  font-size: 20px;
+  border: 1px solid #aaa;
+  background-color: #333;
+  color: #ccc;
+  transition: background 0.2s;
+}
+
+.btn_lap:active {
+  background-color: aquamarine;
+
+}
+
+.ul_lap_list li {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 500px;
+  color: #aaa;
+}
+
+/*                   스톱워치 */
+
+
+/*                   시계     */
+.main-list-clock {
+  position: absolute;
+  background-color: #333;
+  width: 1256px;
+  height: 1000px;
+}
+
+.clock {
+  margin-top: 40px;
+}
+
+.main-list-clock p {
+  margin-top: 100px;
+  font-size: 50px;
+  color: #ffffff;
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+/*                   시계     */
+/*                   투두리스트     */
+.main-list-todo-list {
+  background-color: #333;
+  width: 1256px;
+  height: 1000px;
+}
+
+.main-list-todo-list p {
+  font-size: 50px;
+  color: #ffffff;
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+.todo-list-div {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.todo-list-input {
+  font-size: 20px;
+  width: 400px;
+  border-radius: 10px;
+  border: none;
+}
+
+.todo-list-btn {
+  width: 60px;
+  height: 40px;
+  border-radius: 25px;
+  margin-left: 5px;
+}
+
+.todo-list-list {
+  background-color: #aaa;
+  display: flex;
+  justify-content: center;
+
+  margin: 0 auto;
+  border-radius: 20px;
+  width: 40%;
+  height: 600px;
+}
+
+.todo-list-ul li{
+  display: flex;
+  align-items: center;
+  width: 450px;
+  height: 50px;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo-list-ul input {
+  width: 20px;
+  height: 20px;
+}
+.todo-list-ul p {
+  font-size: 30px;
+}
+
+/*                   투두리스트     */
