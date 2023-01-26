@@ -1,0 +1,450 @@
+/******* COMMON *******/
+:root {
+	font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body{
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to top,rgb(225, 212, 253),rgb(255, 242, 242));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+h1{
+  font-size: 4rem;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+	padding: 3.5rem 0 6rem 0;
+}
+
+.btn{
+  width: 5.5em;
+  height: 1.45em;
+  padding-top: 0.2rem;
+  color: rgb(137, 124, 249);
+  background-color: transparent;
+  font-size: 6rem;
+  border: 2px solid rgb(137, 124, 249);
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.btn:hover{
+  color: #fff;
+  background-color: rgb(137, 124, 249);
+}
+
+.container{
+  max-width: 100rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner{
+  font-size: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden{
+  display: none;
+}
+
+
+
+/******* NAV MENU *******/
+.main-header{
+  width: 100%;
+}
+
+.masthead{
+  position: relative;
+  z-index: 10;
+}
+
+.masthead h1{
+  position: absolute;
+  width: 43rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.masthead .menu-toggle{
+  width: 4.5rem;
+  height: 4.5rem;
+  position: absolute;
+  right: 0;
+  top: 4.1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.masthead .menu-toggle div{
+  width: 4.5rem;
+  height: 5px;
+  border-radius: 25px;
+  background-color: #000;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(.13,.24,.35,1.64);
+}
+
+.masthead .menu-toggle .one,
+.masthead .menu-toggle .two{
+  margin-bottom: 0.7rem;
+}
+
+.main-nav-list::before,
+.main-nav-list::after{
+    background-image: linear-gradient(to top,rgb(204, 180, 255),rgb(255, 242, 242));
+    content:"";
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 0vw;
+    transition: all .1s ease-in-out .4s;
+    z-index: 4;
+}
+.main-nav-list::before{
+  left: 0;
+}
+.main-nav-list::after{
+  right: 0;
+}
+
+.main-nav-list ul{
+  font-size: 8rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 1px 0px #999, -1px 0px #999, 0px 1px #999, 0px -1px #999;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to top,rgb(225, 212, 253),rgb(255, 242, 242));
+  margin: 0 auto;
+  padding-top: 2.2em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -100%;
+  z-index: 3;
+  opacity: 0;
+  transition: .6s ease-in-out;
+}
+
+.main-header .main-nav-list ul li{
+  margin-bottom: 0.4em;
+  position: relative;
+}
+/****** MENU ACTIVE *******/
+
+.masthead.active h1{
+    text-shadow: 0px 3px 3px rgba(0,0,0,.2);
+}
+
+.menu-toggle.active .one{
+    box-shadow: 0px 3px 3px rgba(0,0,0,.4);
+    transform: translate(0, 14px) rotate(45deg);
+}
+
+.menu-toggle.active .two{
+    background-color: transparent;
+    box-shadow: none;
+    transform: translateX(-55px);
+}
+
+.menu-toggle.active .three{
+    box-shadow: 0px 3px 3px rgba(0,0,0,.4);
+    transform: translate(0,-10.4px) rotate(-45deg);
+}
+
+.main-nav-list.active ul{
+  top: 0;
+  opacity: 1;
+}
+
+.main-nav-list.active::before,
+.main-nav-list.active::after{
+  width: 17vw;
+}
+
+/******* MENU ANIMATION *******/
+
+.main-nav-list a{
+  display: inline-block;
+  position: relative;
+  color: #fff;
+}
+
+.main-nav-list a::before{
+  content: attr(data-text);
+  color:rgb(174, 166, 250);
+  width: 0%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.main-nav-list a:hover::before,
+[data-animation="to-bottom"] a:before{
+  width: 100%;
+}
+
+[data-animation="to-left"] a,
+[data-animation="to-top"] a{
+    color:rgb(174, 166, 250);
+}
+
+[data-animation="to-left"] a:before,
+[data-animation="to-top"] a:before{
+    color: #fff;
+    width: 100%;
+}
+
+[data-animation="to-left"] a:hover:before{
+    width: 0;
+}
+
+[data-animation="to-top"] a:before,
+[data-animation="to-bottom"] a:hover:before{
+    height: 100%;
+}
+
+[data-animation="to-top"] a:hover:before,
+[data-animation="to-bottom"] a:before{
+    height: 0;
+}
+
+
+/******* CLOCK ******/
+
+.clock{
+  font-size: 15rem;
+  padding-top: 19rem;
+}
+
+.clock .time{
+  /* font-size: 1.5em; */
+  width: 4em;
+  padding-bottom: 0.6em;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clock .hour,
+.clock .minute{
+  font-size: 1.5em;
+  width: 1.2em;
+  text-align: center;
+}
+
+.clock .blink{
+  font-size: 1.5em;
+  animation: blinking 1s step-end infinite;
+  position: absolute;
+  left: 1.24em;
+  top: -0.09em;
+}
+
+@keyframes blinking {
+  50%{
+    opacity: 0;
+  }
+}
+
+.clock .days{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock .days .date{
+  font-size: 0.7em;
+  padding-bottom: 0.35em;
+}
+
+.clock .days .day{
+  font-size: 0.85em;
+}
+
+
+/******* TIMER *******/
+
+.timer{
+  padding-top: 24rem;
+}
+
+.timer .inner .timer__time{
+  padding-bottom:14rem;
+  width: 100rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.timer .inner .timer__time span{
+  display: block;
+  width: 13.5rem;
+  margin:0 2rem;
+  text-align: center;
+}
+
+.timer .inner .timer__controler{
+  display: flex;
+  gap: 20px;
+}
+
+
+
+/******* TODO-LIST *******/
+.todo{
+  padding-top: 14rem;
+
+}
+.show{
+  opacity: 1;
+}
+.todo .heading{
+  font-size: 3rem;
+  font-weight: 600;
+  padding-bottom: 2rem;
+}
+
+.todo form{
+  display: flex;
+}
+
+.todo form input{
+  padding: 2.2rem 0.8rem;
+  background: transparent;
+  font-size: 3rem;
+  width: 14em;
+  height: 1.2em;
+  border: none;
+  border-bottom: 2px solid rgb(137, 124, 249);
+}
+
+.todo form input:focus{
+  outline: none;
+}
+
+.todo form input:focus::placeholder{
+  opacity: 0;
+} 
+
+.todo form button{
+  cursor: pointer;
+  font-size: 2rem;
+  width: 4em;
+  color: rgb(137, 124, 249);
+  border: 2px solid rgb(137, 124, 249);
+  background: transparent;
+  transition: .2s;
+}
+
+.todo form button:hover{
+  color: #fff;
+  background: rgb(137, 124, 249);
+}
+
+.todo-list{
+  font-size: 3rem;
+  width: 20em;
+  height: 13em; 
+  font-weight: 600;
+  margin-top: 1.4em;
+  padding:0 .4em 0 .4em;
+  overflow: auto;
+}
+
+.todo-list .task{
+  list-style: circle;
+}
+
+.todo-list .task li{
+  list-style: none;
+  line-height: 1.4em;
+  padding-bottom: 0.65em;
+  display: flex;
+  align-items: center;
+}
+
+.todo-list .task li input[type="checkbox"]{
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.todo-list .task li span{
+  margin-left: 0.5em;
+}
+
+.task button{
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+/***** FOOTER *****/
+
+footer{
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 22em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1em;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+footer .icons{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 0.4em;
+}
+
+footer .icon{
+  width: 2.2em;
+  height: 2.2em;
+  transition: 0.2s ease-in;
+}
+
+footer .fa-github{
+  font-size: 2.2em;
+}
+
+footer .icon:hover{
+  transform: scale(1.1);
+}
