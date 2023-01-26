@@ -90,6 +90,9 @@ stop.addEventListener('click',()=>{clearInterval(interval)})
 reset.addEventListener('click',()=>{
   clearInterval(interval)
   appenTime(0,0,0)
+  timer.ten = 0
+  timer.seconde = 0
+  timer.minute = 0
 })
 
 // STRAT FUNCTION

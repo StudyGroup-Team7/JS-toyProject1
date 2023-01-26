@@ -1,44 +1,41 @@
 /******* COMMON *******/
 :root {
-  font-size: 10px;
+	font-size: 10px;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-body {
+body{
   color: #333;
   font-family: "Montserrat", sans-serif;
   min-height: 100%;
   height: 100vh;
-  background-image: linear-gradient(
-    to top,
-    rgb(225, 212, 253),
-    rgb(255, 242, 242)
-  );
+  background-image: linear-gradient(to top,rgb(225, 212, 253),rgb(255, 242, 242));
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
-a {
+
+a{
   color: inherit;
   text-decoration: none;
 }
 
-h1 {
+h1{
   font-size: 4rem;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  padding: 3.5rem 0 6rem 0;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+	padding: 3.5rem 0 6rem 0;
 }
 
-.btn {
+.btn{
   width: 5.5em;
   height: 1.45em;
   padding-top: 0.2rem;
@@ -52,12 +49,13 @@ h1 {
   cursor: pointer;
 }
 
-.btn:hover {
+
+.btn:hover{
   color: #fff;
   background-color: rgb(137, 124, 249);
 }
 
-.container {
+.container{
   max-width: 100rem;
   margin: 0 auto;
   display: flex;
@@ -65,28 +63,30 @@ h1 {
   align-items: center;
 }
 
-.inner {
+.inner{
   font-size: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.hidden {
+.hidden{
   display: none;
 }
 
+
+
 /******* NAV MENU *******/
-.main-header {
+.main-header{
   width: 100%;
 }
 
-.masthead {
+.masthead{
   position: relative;
   z-index: 10;
 }
 
-.masthead h1 {
+.masthead h1{
   position: absolute;
   width: 43rem;
   left: 0;
@@ -94,7 +94,7 @@ h1 {
   margin: 0 auto;
 }
 
-.masthead .menu-toggle {
+.masthead .menu-toggle{
   width: 4.5rem;
   height: 4.5rem;
   position: absolute;
@@ -108,43 +108,39 @@ h1 {
   overflow: hidden;
 }
 
-.masthead .menu-toggle div {
+.masthead .menu-toggle div{
   width: 4.5rem;
   height: 5px;
   border-radius: 25px;
   background-color: #000;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.13, 0.24, 0.35, 1.64);
+  transition-timing-function: cubic-bezier(.13,.24,.35,1.64);
 }
 
 .masthead .menu-toggle .one,
-.masthead .menu-toggle .two {
+.masthead .menu-toggle .two{
   margin-bottom: 0.7rem;
 }
 
 .main-nav-list::before,
-.main-nav-list::after {
-  background-image: linear-gradient(
-    to top,
-    rgb(204, 180, 255),
-    rgb(255, 242, 242)
-  );
-  content: "";
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 0vw;
-  transition: all 0.1s ease-in-out 0.4s;
-  z-index: 4;
+.main-nav-list::after{
+    background-image: linear-gradient(to top,rgb(204, 180, 255),rgb(255, 242, 242));
+    content:"";
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 0vw;
+    transition: all .1s ease-in-out .4s;
+    z-index: 4;
 }
-.main-nav-list::before {
+.main-nav-list::before{
   left: 0;
 }
-.main-nav-list::after {
+.main-nav-list::after{
   right: 0;
 }
 
-.main-nav-list ul {
+.main-nav-list ul{
   font-size: 8rem;
   font-weight: 800;
   color: #fff;
@@ -152,11 +148,7 @@ h1 {
   text-align: center;
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(
-    to top,
-    rgb(225, 212, 253),
-    rgb(255, 242, 242)
-  );
+  background-image: linear-gradient(to top,rgb(225, 212, 253),rgb(255, 242, 242));
   margin: 0 auto;
   padding-top: 2.2em;
   position: absolute;
@@ -165,56 +157,56 @@ h1 {
   top: -100%;
   z-index: 3;
   opacity: 0;
-  transition: 0.6s ease-in-out;
+  transition: .6s ease-in-out;
 }
 
-.main-header .main-nav-list ul li {
+.main-header .main-nav-list ul li{
   margin-bottom: 0.4em;
   position: relative;
 }
 /****** MENU ACTIVE *******/
 
-.masthead.active h1 {
-  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+.masthead.active h1{
+    text-shadow: 0px 3px 3px rgba(0,0,0,.2);
 }
 
-.menu-toggle.active .one {
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
-  transform: translate(0, 14px) rotate(45deg);
+.menu-toggle.active .one{
+    box-shadow: 0px 3px 3px rgba(0,0,0,.4);
+    transform: translate(0, 14px) rotate(45deg);
 }
 
-.menu-toggle.active .two {
-  background-color: transparent;
-  box-shadow: none;
-  transform: translateX(-55px);
+.menu-toggle.active .two{
+    background-color: transparent;
+    box-shadow: none;
+    transform: translateX(-55px);
 }
 
-.menu-toggle.active .three {
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
-  transform: translate(0, -10.4px) rotate(-45deg);
+.menu-toggle.active .three{
+    box-shadow: 0px 3px 3px rgba(0,0,0,.4);
+    transform: translate(0,-10.4px) rotate(-45deg);
 }
 
-.main-nav-list.active ul {
+.main-nav-list.active ul{
   top: 0;
   opacity: 1;
 }
 
 .main-nav-list.active::before,
-.main-nav-list.active::after {
+.main-nav-list.active::after{
   width: 17vw;
 }
 
 /******* MENU ANIMATION *******/
 
-.main-nav-list a {
+.main-nav-list a{
   display: inline-block;
   position: relative;
   color: #fff;
 }
 
-.main-nav-list a::before {
+.main-nav-list a::before{
   content: attr(data-text);
-  color: rgb(174, 166, 250);
+  color:rgb(174, 166, 250);
   width: 0%;
   position: absolute;
   left: 0;
@@ -224,43 +216,44 @@ h1 {
 }
 
 .main-nav-list a:hover::before,
-[data-animation="to-bottom"] a:before {
+[data-animation="to-bottom"] a:before{
   width: 100%;
 }
 
 [data-animation="to-left"] a,
-[data-animation="to-top"] a {
-  color: rgb(174, 166, 250);
+[data-animation="to-top"] a{
+    color:rgb(174, 166, 250);
 }
 
 [data-animation="to-left"] a:before,
-[data-animation="to-top"] a:before {
-  color: #fff;
-  width: 100%;
+[data-animation="to-top"] a:before{
+    color: #fff;
+    width: 100%;
 }
 
-[data-animation="to-left"] a:hover:before {
-  width: 0;
+[data-animation="to-left"] a:hover:before{
+    width: 0;
 }
 
 [data-animation="to-top"] a:before,
-[data-animation="to-bottom"] a:hover:before {
-  height: 100%;
+[data-animation="to-bottom"] a:hover:before{
+    height: 100%;
 }
 
 [data-animation="to-top"] a:hover:before,
-[data-animation="to-bottom"] a:before {
-  height: 0;
+[data-animation="to-bottom"] a:before{
+    height: 0;
 }
+
 
 /******* CLOCK ******/
 
-.clock {
+.clock{
   font-size: 15rem;
-  padding-top: 19rem;
+  padding-top: 26rem;
 }
 
-.clock .time {
+.clock .time{
   /* font-size: 1.5em; */
   width: 4em;
   padding-bottom: 0.6em;
@@ -270,13 +263,13 @@ h1 {
 }
 
 .clock .hour,
-.clock .minute {
+.clock .minute{
   font-size: 1.5em;
   width: 1.2em;
   text-align: center;
 }
 
-.clock .blink {
+.clock .blink{
   font-size: 1.5em;
   animation: blinking 1s step-end infinite;
   position: absolute;
@@ -285,70 +278,72 @@ h1 {
 }
 
 @keyframes blinking {
-  50% {
+  50%{
     opacity: 0;
   }
 }
 
-.clock .days {
+.clock .days{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.clock .days .date {
+  
+.clock .days .date{
   font-size: 0.7em;
   padding-bottom: 0.35em;
 }
 
-.clock .days .day {
+.clock .days .day{
   font-size: 0.85em;
 }
 
+
 /******* TIMER *******/
 
-.timer {
+.timer{
   padding-top: 24rem;
 }
 
-.timer .inner .timer__time {
-  padding-bottom: 14rem;
+.timer .inner .timer__time{
+  padding-bottom:14rem;
   width: 100rem;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.timer .inner .timer__time span {
+.timer .inner .timer__time span{
   display: block;
   width: 13.5rem;
-  margin: 0 2rem;
+  margin:0 2rem;
   text-align: center;
 }
 
-.timer .inner .timer__controler {
+.timer .inner .timer__controler{
   display: flex;
   gap: 20px;
 }
 
 /******* TODO-LIST *******/
-.todo {
+.todo{
   padding-top: 14rem;
+
 }
-.show {
+.show{
   opacity: 1;
 }
-.todo .heading {
+.todo .heading{
   font-size: 3rem;
   font-weight: 600;
   padding-bottom: 2rem;
 }
 
-.todo form {
+.todo form{
   display: flex;
 }
 
-.todo form input {
+.todo form input{
   padding: 2.2rem 0.8rem;
   background: transparent;
   font-size: 3rem;
@@ -358,44 +353,44 @@ h1 {
   border-bottom: 2px solid rgb(137, 124, 249);
 }
 
-.todo form input:focus {
+.todo form input:focus{
   outline: none;
 }
 
-.todo form input:focus::placeholder {
+.todo form input:focus::placeholder{
   opacity: 0;
-}
+} 
 
-.todo form button {
+.todo form button{
   cursor: pointer;
   font-size: 2rem;
   width: 4em;
   color: rgb(137, 124, 249);
   border: 2px solid rgb(137, 124, 249);
   background: transparent;
-  transition: 0.2s;
+  transition: .2s;
 }
 
-.todo form button:hover {
+.todo form button:hover{
   color: #fff;
   background: rgb(137, 124, 249);
 }
 
-.todo-list {
+.todo-list{
   font-size: 3rem;
   width: 20em;
-  height: 13em;
+  height: 13em; 
   font-weight: 600;
   margin-top: 1.4em;
-  padding: 0 0.4em 0 0.4em;
+  padding:0 .4em 0 .4em;
   overflow: auto;
 }
 
-.todo-list .task {
+.todo-list .task{
   list-style: circle;
 }
 
-.todo-list .task li {
+.todo-list .task li{
   list-style: none;
   line-height: 1.4em;
   padding-bottom: 0.65em;
@@ -403,16 +398,16 @@ h1 {
   align-items: center;
 }
 
-.todo-list .task li input[type="checkbox"] {
+.todo-list .task li input[type="checkbox"]{
   width: 1.4em;
   height: 1.4em;
 }
 
-.todo-list .task li span {
+.todo-list .task li span{
   margin-left: 0.5em;
 }
 
-.task button {
+.task button{
   cursor: pointer;
   border: none;
   background-color: transparent;
@@ -420,7 +415,7 @@ h1 {
 
 /***** FOOTER *****/
 
-footer {
+footer{
   color: #333;
   font-size: 1.5rem;
   text-align: center;
@@ -433,23 +428,25 @@ footer {
   z-index: 10;
 }
 
-footer .icons {
+footer .icons{
   display: flex;
   justify-content: center;
   gap: 20px;
   padding-bottom: 0.4em;
 }
 
-footer .icon {
+footer .icon{
   width: 2.2em;
   height: 2.2em;
   transition: 0.2s ease-in;
 }
 
-footer .fa-github {
+
+footer .fa-github{
   font-size: 2.2em;
 }
 
-footer .icon:hover {
+footer .icon:hover{
   transform: scale(1.1);
 }
+
