@@ -216,11 +216,9 @@ window.onload = () => {
 const activeElements = document.querySelectorAll('.active-element');
 
 const act = () => {
-  console.dir(activeElements);
   for (let activeted = 0; activeted < activeElements.length; activeted++){
     activeElements[activeted].classList.toggle('active');
   }
-  console.dir(activeElements);
 };
 
 let activeToggle = toggleBar.addEventListener('click', act);
