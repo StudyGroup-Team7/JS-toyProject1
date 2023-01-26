@@ -21,6 +21,7 @@ body{
   background-attachment: fixed;
 }
 
+
 a{
   color: inherit;
   text-decoration: none;
@@ -47,6 +48,7 @@ h1{
   transition: 0.4s;
   cursor: pointer;
 }
+
 
 .btn:hover{
   color: #fff;
@@ -286,7 +288,7 @@ h1{
   flex-direction: column;
   align-items: center;
 }
-
+  
 .clock .days .date{
   font-size: 0.7em;
   padding-bottom: 0.35em;
@@ -322,8 +324,6 @@ h1{
   display: flex;
   gap: 20px;
 }
-
-
 
 /******* TODO-LIST *******/
 .todo{
@@ -441,6 +441,7 @@ footer .icon{
   transition: 0.2s ease-in;
 }
 
+
 footer .fa-github{
   font-size: 2.2em;
 }
@@ -448,3 +449,4 @@ footer .fa-github{
 footer .icon:hover{
   transform: scale(1.1);
 }
+
