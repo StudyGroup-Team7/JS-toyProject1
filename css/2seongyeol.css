@@ -1,0 +1,385 @@
+html {
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 5px;
+  overflow: overlay;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border: 1px solid #CCC;
+  box-shadow: inset 0 0 15px #FFF;
+  border-radius: 10px;
+}
+html::-webkit-scrollbar-track {
+  background: linear-gradient(to right, #007991 33%, #bde0fe 66%, #ffe5d9 100%) ;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+.toggle-item {
+  transition: all 0.4s ease-in-out;
+}
+
+header .main-nav {
+  padding: 25px;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .main-nav h1 {
+  font-size: 2rem;
+  color: #FFF;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+header .main-nav .menu-toggle {
+  width: 65px;
+  cursor: pointer;
+}
+
+
+header .main-nav .menu-toggle>div {
+  background-color: #fff;
+  height: 7px;
+  border-radius: 15px;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+header .main-nav .menu-toggle .toggle-bar1, 
+header .main-nav .menu-toggle .toggle-bar2 {
+  margin-bottom: 7px;
+}
+
+header .main-nav .menu-toggle .toggle-bar1.toggle-item-active {
+  transform: translate(0, 15px) rotate(45deg);
+}
+
+header .main-nav .menu-toggle .toggle-bar2.toggle-item-active {
+  transform: translateX(-80px);
+  opacity: 0;
+}
+
+header .main-nav .menu-toggle .toggle-bar3.toggle-item-active {
+  transform: translate(0, -15px) rotate(-45deg);
+}
+
+header .nav-list ul{
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+  z-index: 3;
+  width: 50vw;
+  height: 100vh;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.3s;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+header .nav-list ul.toggle-item-active {
+  transform: translate(-50%, 0%)
+}
+
+header .nav-list ul li {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  /* text-shadow: 0 0 10px #1d3557; */
+}
+
+header .nav-list ul li h1 {
+  background: linear-gradient(137deg, #ffffff 33%, #8ecaff 66%, #19f1dc 100%);
+  background-size: 200% 100%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+header .nav-list ul li h1:hover {
+  animation: typography 0.8s ease-in-out forwards;
+}
+
+@keyframes typography {
+  0% { background-position-x: 0%; }
+  100% { background-position-x: 100%; }
+}
+
+header .nav-list::before,
+header .nav-list::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100vh;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  background-color: #1d3557;
+}
+
+header .nav-list.toggle-item-active::before,
+header .nav-list.toggle-item-active::after {
+  width: 30vw;
+}
+
+header .nav-list::before {
+  left: 0;
+
+}
+
+header .nav-list::after {
+  right: 0;
+}
+
+/* MAIN */
+main {
+  height: 100%;
+  width: 100%;
+  /* overflow: scroll; */
+}
+
+main .main-container {
+  background: linear-gradient(to right, #007991 33%, #bde0fe 66%, #ffe5d9 100%) ;
+  width: 300vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 98vh);
+}
+
+/* 스탑워치 */
+
+main .main-container .stopwatch { 
+  color: #add7f6;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition-delay: 0.3s;
+}
+
+
+main .main-container .stopwatch.toggle-item-active {
+  opacity: 0;
+}
+
+main .main-container .stopwatch .stopwatch-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 5px solid #add7f6;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .main-container .stopwatch .stopwatch-container.active {
+  animation: count 3s linear infinite; 
+}
+
+@keyframes count {
+  0% { border-right-color: #87bba2; }
+  25% { border-bottom-color: #87bba2; }
+  50% { border-left-color: #87bba2; }
+  75% { border-top-color: #87bba2; }
+  100% { border-right-color: #87bba2; }
+}
+
+main .main-container .stopwatch .stopwatch-container .stopwatch__display{
+  font-size: 44px;
+}
+
+main .main-container .stopwatch .stopwatch-container .stopwatch__btns {
+  position: absolute;
+  bottom: 50px;
+}
+
+main .main-container .stopwatch .stopwatch-container .stopwatch__btns button {
+  background-color: transparent;
+  border: none;
+  color: #add7f6;
+  cursor: pointer;
+}
+main .main-container .stopwatch .stopwatch-container .stopwatch__btns button.visually-disabled {
+  color: rgba(0, 0, 0, 0.4)
+}
+
+main .main-container .stopwatch .records {
+  width: 300px;
+  height: 300px;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 600;
+  border: 2px solid #add7f6;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+main .main-container .stopwatch .records::-webkit-scrollbar {
+  width: 4px;
+}
+
+main .main-container .stopwatch .records::-webkit-scrollbar-thumb {
+  background-color: #add7f6;
+  border-radius: 5px;
+}
+
+/* 시계 */
+main .main-container .clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+main .main-container .clock.toggle-item-active {
+  opacity: 0;
+
+}
+main .main-container .clock div {
+  color: #FFF;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 0.6rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  font-family: monospace;
+}
+
+/* 투두 */
+main .main-container .todo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+main .main-container .todo.toggle-item-active {
+  opacity: 0;
+}
+
+main .main-container button {
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 5px rgb(157, 157, 157);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+main .main-container .todo .input-container{
+  position: relative;
+  width: 65vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .main-container .todo .input-container input{
+  width: 50%;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 10px;
+  padding: 0 15px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+main .main-container .todo .input-container button {
+  position: absolute;
+  right: 0;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+main .main-container .todo .input-container input:focus {
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  outline: none;
+}
+
+main .main-container .todo .input-container input:focus ~button{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+main .main-container .todo .todo__list input:checked ~span{
+  text-decoration: line-through;
+}
+
+main .main-container .todo .todo__list {
+  position: relative;
+  width: 65vw;
+  height: 40vh;
+  line-height: 1.4;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-y: scroll;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+main .main-container .todo .todo__list span {
+  padding: 10px;
+}
+
+main .main-container .todo .todo__list li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+main .main-container .todo .todo__list button {
+  
+}
+
+main .main-container .todo .todo__list button:hover {
+  animation: highlightDelete 1s ease-out infinite;
+}
+@keyframes highlightDelete {
+  0% { 
+    transform: scale(1);
+    text-shadow: 0 0 5px rgb(192, 79, 79);
+  }
+  50% { 
+    transform: scale(1.2);
+    text-shadow: 0 0 15px rgb(192, 79, 79);
+  }
+  100% { 
+    transform: scale(1);
+    text-shadow: 0 0 5px rgb(192, 79, 79);
+  }
+}
+
+main .main-container .todo .todo__list::-webkit-scrollbar {
+  width: 4px;
+}
+
+main .main-container .todo .todo__list::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+
