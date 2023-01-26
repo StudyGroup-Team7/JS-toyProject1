@@ -26,8 +26,9 @@
     />
     <link rel="stylesheet" href="./css/3hyewon.css" />
 
-    <script defer src="./js/login.js"></script>
     <script defer src="./js/3hyewon.js"></script>
+
+    <script defer src="./js/stopwatch.js"></script>
   </head>
   <body>
     <header>
@@ -51,16 +52,16 @@
         </div>
       </nav>
     </header>
-    <main>
-      <form class="login-container">
-        <input
-          type="text"
-          class="login-txt"
-          placeholder="성함을 입력해주세요"
-        />
-        <button class="login-btn">click</button>
-        <h2 class="hide greetings"></h2>
-      </form>
-    </main>
+    <div class="stopwatch-container">
+      <div class="stopwatch-box">
+        <h2>Stopwatch</h2>
+        <div class="timer">00:00:00</div>
+        <div class="button-wrap">
+          <div class="button-item start">Start</div>
+          <div class="button-item stop">Stop</div>
+          <div class="button-item reset">Reset</div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

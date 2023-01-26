@@ -1,0 +1,197 @@
+body {
+  background-color: rgb(30, 30, 30);
+}
+
+/* STOPWATCH */
+
+.stopwatch {
+  display: none;
+  color: #fff;
+  margin: 15%;
+  text-align: center;
+}
+
+.stopwatch h1 {
+  padding: 30px;
+  font-size: 90px;
+}
+
+.stopwatch h2 {
+  padding-bottom: 30px;
+  font-size: 70px;
+}
+
+.stopwatch h2 span {
+  display: inline-block;
+  width: 110px;
+}
+
+.stopwatch .btn-stopwatch button {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.stopwatch .btn-stopwatch button:hover {
+  color: rgb(255, 0, 0);
+  font-weight: bolder;
+}
+
+.stopwatch .btn-stop {
+  margin: auto 40px auto;
+}
+
+/* CLOCK */
+
+.clock {
+  color: #fff;
+  font-size: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  display: none;
+}
+
+/* to-do list */
+
+.to-do-list {
+  display: none; 
+  justify-content: center;
+  margin-top: 30vh;
+}
+
+.to-do-list input {
+  width: 330px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  font-size: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+}
+
+.to-do-list button {
+  border: none;
+  width: 50px;
+  height: 40px;
+  padding: 0;
+  font-size: 15px;
+  background-color: #fff;
+  border-left: 1px solid #000;;
+}
+
+.to-do {
+  color: #fff;
+}
+
+.to-do li {
+  display: flex;
+  margin-left: 71vh;
+  margin-top: 15px;
+}
+
+.to-do div {
+  font-size: 25px;
+  margin-top: 7px;
+}
+
+.to-do button {
+  border: none;
+  color: rgb(255, 0, 0);
+  background-color: transparent;
+  font-size: 30px;
+}
+
+
+
+/* toggle menu */
+
+.toggle-menu {
+  position: absolute;
+  cursor: pointer;
+  top: 3vh;
+  left: 94vw;
+}
+
+.toggle-menu div {
+  background-color: #fff;
+  height: 7px;
+  width: 55px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.menu::before {
+  left: 0;
+}
+
+.menu::after {
+  right: 0;
+}
+
+.menu .menu-list {
+  color: #fff;
+  display: flex;
+}
+
+.menu .menu-list .menu-list-wrpper {
+  font-size: 60px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.menu .menu-list .menu-list-wrpper .menu-list-item {
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.menu .menu-list .menu-list-wrpper .menu-list-item:hover {
+  color: rgb(170, 170, 170);
+}
+
+
+
+/* toggle menu active */
+
+.wrapper-nav .active .one {
+  transform: translate(0,9px) rotate(45deg);
+  margin-top: 5px;
+}
+
+.wrapper-nav .active .three {
+  transform: translate(0,-9px) rotate(-45deg);
+  margin-top: 5px;
+}
+
+.wrapper-nav .active .two {
+  display: none;
+}
+
+.menu .menu-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu .active::before {
+  display: block;
+  content: '';
+  background-color: rgb(150, 150, 150);
+  width: 30vw;
+  height: 100vh;
+  transition: all 100ms ease-in-out 300ms;
+}
+
+.menu .active::after {
+  display: block;
+  content: '';
+  background-color: rgb(150, 150, 150);
+  width: 30vw;
+  height: 100vh;
+  transition: all 100ms ease-in-out 300ms;
+}
+
