@@ -10,6 +10,49 @@
   <script type="module" defer src="/js/6sojin.js"></script>
 </head>
 <body>
-  
+  <!-- stopwatch -->
+  <div class="stopwatch">
+    <h1>STOPWATCH</h1>
+    <h2>
+      <span class="min">00</span>:<span class="sec">00</span>:<span class="tens">00</span>
+    </h2>
+    <div class="btn-stopwatch">
+      <button class="btn-start">START</button>
+      <button class="btn-stop">STOP</button>
+      <button class="btn-reset">RESET</button>
+    </div>
+  </div>
+
+  <!-- clock -->
+  <div class="clock"></div>
+
+  <!-- to do list -->
+  <form class="to-do-list">
+    <input type="text" placeholder="Enter a task">
+    <button>ADD</button>
+  </form>
+
+  <ul class="to-do"></ul>
+
+  <!-- toggle menu -->
+  <nav class="wrapper-nav">
+
+    <div class="toggle-menu active-element" id="toggle-bar">
+      <div class="one"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+    </div>
+    
+    <div class="menu">
+      <ul class="menu-list active-element">
+        <div class="menu-list-wrpper">
+          <li class="menu-list-item" id="menu-stopwatch">stopwatch</li>
+          <li class="menu-list-item" id="menu-clock">clock</li>
+          <li class="menu-list-item" id="menu-to-do">to-do list</li>
+        </div>
+      </ul>
+    </div>
+
+  </nav>
 </body>
 </html>

@@ -1,15 +1,114 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ParkHeesu</title>
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+  rel="stylesheet">
+  <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="/css/1heesu.css">
+  <!-- ICON -->
+  <script src="https://kit.fontawesome.com/ab165db5f8.js" crossorigin="anonymous"></script>
+  <!-- JS -->
   <script tpye="module" defer src="/js/1heesu.js"></script>
 </head>
+
 <body>
-  
+  <div class="container">
+    <!-- HEADER -->
+    <header class="main-header">
+      <nav>
+        <div class="masthead active-el">
+          <h1><a href="/source/1heesu.html">MAKING JS PROJECT</a></h1>
+          <div id="menu-toggle" class="menu-toggle active-el">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+          </div>
+        </div>
+        <div class="main-nav-list active-el">
+          <ul>
+            <li class="MAIN" data-text="MAIN"><a href="/index.html" data-text="MAIN">MAIN</a></li>
+            <li class="CLOCK" data-animation="to-left" ><a href="#" data-text="CLOCK">CLOCK</a></li>
+            <li class="TIMER" data-animation="to-bottom"><a href="#" data-text="TIMER">TIMER</a> </li>
+            <li class="TODO" data-animation="to-top"><a href="#" data-text="TODO">TODO</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- CLOCK -->
+    <section class="clock section">
+      <div class="inner">
+        <div class="time">
+          <span class="hour"></span><span class="blink">:</span><span class="minute"></span>
+        </div>
+        <div class="days">
+          <div class="date"></div>
+          <div class="day"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMER -->
+    <section class="timer section hidden">
+      <div class="inner">
+        <div class="timer__time">
+          <span class="minutes">00</span> :
+          <span class="secondes">00</span> .
+          <span class="tens">00</span>
+        </div>
+        <div class="timer__controler">
+          <button class="start btn">START</button>
+          <button class="stop btn">STOP</button>
+          <button class="reset btn">RESET</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO LIST -->
+    <section class="todo section hidden">
+      <div class="inner">
+        <div class="heading">TODO LIST</div>
+        <form class="todo-form">
+          <input type="text" placeholder="Enter List">
+          <button>ADD</button>
+        </form>
+      </div>
+      <div class="todo-list">
+        <ul class="task">
+          <li></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="icons">
+        <div class="icon">
+          <a href="https://velog.io/@blackcat217" target="_blank">
+            <svg width="2.2em" height="2.2em" viewBox="0 0 192 192" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z" fill="currentColor"></path></svg>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://github.com/Nevacat" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <div class="copy">
+        ⓒ<span class="copy-year"></span>. Hisu's Project All rights reserved.
+      </div>
+    </footer>
+  </div>
 </body>
+
 </html>
