@@ -26,8 +26,8 @@
     />
     <link rel="stylesheet" href="/css/3hyewon.css" />
 
-    <script defer src="/js/login.js"></script>
     <script defer src="/js/3hyewon.js"></script>
+    <script defer src="/js/cal-clock.js"></script>
   </head>
   <body>
     <header>
@@ -52,16 +52,19 @@
       </nav>
     </header>
     <main>
-      <form class="login-container">
-        <input
-          type="text"
-          class="login-txt"
-          placeholder="성함을 입력해주세요"
-        />
-        <button class="login-btn">click</button>
-        <h2 class="hide greetings"></h2>
-        <button id="log-out">로그아웃</button>
-      </form>
+      <div class="cal-clock-container">
+        <div class="calendar-box">
+          <span class="calendar-input"></span>
+        </div>
+        <div class="title">What time is it now?</div>
+        <div class="clock-wrap">
+          <div class="hr"></div>
+          <div class="blink">:</div>
+          <div class="min"></div>
+          <div class="blink">:</div>
+          <div class="sec"></div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
