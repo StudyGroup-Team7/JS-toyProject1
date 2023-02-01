@@ -176,22 +176,3 @@ body {
   display: flex;
   justify-content: space-between;
 }
-
-.menu .active::before {
-  display: block;
-  content: '';
-  background-color: rgb(150, 150, 150);
-  width: 30vw;
-  height: 100vh;
-  transition: all 100ms ease-in-out 300ms;
-}
-
-.menu .active::after {
-  display: block;
-  content: '';
-  background-color: rgb(150, 150, 150);
-  width: 30vw;
-  height: 100vh;
-  transition: all 100ms ease-in-out 300ms;
-}
-
