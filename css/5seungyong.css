@@ -13,12 +13,12 @@ a {
   height: 100vh;
   margin: 0 auto;
   max-width: 1256px;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   width: 93%;
 }
 
 .main-header a {
-  letter-spacing: .18rem;
+  letter-spacing: 0.18rem;
   width: 100%;
   text-transform: uppercase;
 }
@@ -29,7 +29,6 @@ a {
   height: 150px;
   align-items: center;
   display: flex;
-  justify-content: space-between;
   background: linear-gradient(to bottom, black, #333333);
 }
 
@@ -38,10 +37,11 @@ a {
   text-align: center;
   align-items: center;
   width: 100%;
-  font-family: 'Black Han Sans', sans-serif;
+  margin-left: 52px;
+  font-family: "Black Han Sans", sans-serif;
 }
 
-.masthead h1 a {
+.masthead h1 {
   text-decoration: none;
   color: #ffffff;
   font-size: 40px;
@@ -57,10 +57,10 @@ a {
 .menu-toggle div {
   background-color: #ffffff;
   border-radius: 25px;
-  box-shadow: 0px 3px 13px rgba(0, 0, 0, .3);
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
   height: 7px;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(.13, .24, .35, 1.64);
+  transition-timing-function: cubic-bezier(0.13, 0.24, 0.35, 1.64);
 }
 
 .menu-toggle .one,
@@ -68,13 +68,12 @@ a {
   margin-bottom: 7px;
 }
 
-.main-nav-list::before{
+.main-nav-list::before {
   left: 0;
 }
-.main-nav-list::after{
+.main-nav-list::after {
   right: 0;
 }
-
 
 .main-nav-list::before,
 .main-nav-list::after {
@@ -113,9 +112,8 @@ a {
   transition-delay: 130ms;
 }
 
-
 .menu-toggle.active .one {
-  box-shadow: 0px 3px 13px rgba(0, 0, 0, .4);
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.4);
   transform: translate(0, 14px) rotate(45deg);
 }
 
@@ -126,7 +124,7 @@ a {
 }
 
 .menu-toggle.active .three {
-  box-shadow: 0px 3px 13px rgba(0, 0, 0, .4);
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.4);
   transform: translate(0, -14px) rotate(-45deg);
 }
 
@@ -153,15 +151,12 @@ a {
   opacity: 1;
 }
 
-
-
 /*** Just getting silly now ***************************/
 .wrapper.active p {
   color: rgb(50, 101, 134);
   transition-delay: 150ms;
   transition-duration: 350ms;
 }
-
 
 /*                   스톱워치 */
 .main {
@@ -170,7 +165,6 @@ a {
   align-items: center;
   text-align: center;
 }
-
 
 .main-list-stop-watch {
   position: absolute;
@@ -182,19 +176,17 @@ a {
   height: 1000px;
 }
 
-
 .main_head {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
   text-decoration: none;
 }
 
 .stop_watch {
   margin-top: 100px;
-
 }
 
 .stop_watch_time {
@@ -219,7 +211,6 @@ a {
 
 .btn_lap:active {
   background-color: aquamarine;
-
 }
 
 .ul_lap_list li {
@@ -230,7 +221,6 @@ a {
 }
 
 /*                   스톱워치 */
-
 
 /*                   시계     */
 .main-list-clock {
@@ -248,7 +238,7 @@ a {
   margin-top: 100px;
   font-size: 50px;
   color: #ffffff;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
 
 /*                   시계     */
@@ -262,7 +252,7 @@ a {
 .main-list-todo-list p {
   font-size: 50px;
   color: #ffffff;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
 
 .todo-list-div {
@@ -297,7 +287,11 @@ a {
   height: 600px;
 }
 
-.todo-list-ul li{
+.todo-list-ul {
+  overflow: auto;
+}
+
+.todo-list-ul li {
   display: flex;
   align-items: center;
   width: 450px;
