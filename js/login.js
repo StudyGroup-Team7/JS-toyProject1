@@ -3,6 +3,7 @@ const loginTxt = document.querySelector(".login-txt");
 const h2 = document.querySelector(".login-container h2");
 const logOut = document.getElementById("log-out");
 
+
 function loginSubmit(event) {
   event.preventDefault();
   const username = loginTxt.value;
@@ -30,3 +31,4 @@ logOut.addEventListener("click", (username) => {
   h2.classList.toggle("hide");
 });
 // d
+

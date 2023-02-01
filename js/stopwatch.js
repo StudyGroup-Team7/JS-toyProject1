@@ -15,6 +15,7 @@ function reset() {
   clearInterval(interval);
   timerEl.textContent = "00:00:00";
   seconds = 0;
+
 }
 
 startEl.addEventListener("click", start);
@@ -26,5 +27,4 @@ function timer() {
   const hrs = String(parseInt(seconds / 3600)).padStart(2, "0");
   const mins = String(parseInt(seconds / 60) - `${hrs * 60}`).padStart(2, "0");
   const secs = String(seconds % 60).padStart(2, "0");
-  timerEl.textContent = ` ${hrs}:${mins}:${secs}`;
 }
