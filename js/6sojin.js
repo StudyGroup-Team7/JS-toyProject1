@@ -63,6 +63,18 @@ const hideMenu = () => {
   menu.style.display = 'none';
 }
 
+const hideStopwatch = () => {
+  stopwatch.style.display = 'none';
+}
+
+const hideClock = () => {
+  clock.style.display = 'none';
+}
+
+const hideTodoList = () => {
+  toDoList.style.display = 'none';
+}
+
 const showMenu = () => {
   menu.style.display = 'block';
 }
@@ -89,10 +101,16 @@ const hide = () => {
 }
 
 
+const switchToggleBar = () => {
+  toggleBar.classList.add('active');
+}
+
 const showStopwatch = () => {
   hideMenu();
   stopwatch.style.display = 'block';  
   activeMenu = 'stopwatch';
+
+  switchToggleBar();
 };
 
 menuStopwatch.addEventListener('click', showStopwatch);
@@ -102,11 +120,15 @@ menuStopwatch.addEventListener('click', showStopwatch);
 
 const clock = document.querySelector('.clock');
 const menuClock = document.querySelector('#menu-clock');
+let clockIntervalId = 0;
 
 const showClock = () => {
   hideMenu();
   clock.style.display = 'flex';
   activeMenu = 'clock';
+  switchToggleBar();
+  clockIntervalId = setInterval(getTime, 1000);
+  console.log(clockIntervalId)
 }
 
 menuClock.addEventListener('click', showClock);
@@ -130,7 +152,7 @@ function getTime () {
 }
 
 getTime();
-setInterval (getTime, 1000);
+
 
 // to-do list
 
@@ -144,6 +166,8 @@ const showToDoList = () => {
   hideMenu();
   toDoList.style.display = 'flex';
   activeMenu = 'todo';
+
+  switchToggleBar();
 }
 
 menuToDo.addEventListener('click', showToDoList);
@@ -215,10 +239,30 @@ window.onload = () => {
 
 const activeElements = document.querySelectorAll('.active-element');
 
-const act = () => {
-  for (let activeted = 0; activeted < activeElements.length; activeted++){
-    activeElements[activeted].classList.toggle('active');
+
+const deactivateAll = () => {
+  for (let i = 0; i < activeElements.length; i++) {
+    activeElements[i].classList.remove('active'); 
   }
+
+  hideStopwatch();
+  hideClock();
+  hideTodoList();
+}
+
+const act = () => {
+  const isActive = toggleBar.classList.contains('active');
+  
+  if (isActive) {
+    toggleBar.classList.remove('active');
+    deactivateAll();
+    showMenu();
+    clearInterval(clockIntervalId);
+  }
+  
+  // for (let activeted = 0; activeted < activeElements.length; activeted++){
+  //   activeElements[activeted].classList.toggle('active');
+  // }
 };
 
-let activeToggle = toggleBar.addEventListener('click', act);
+toggleBar.addEventListener('click', act);
