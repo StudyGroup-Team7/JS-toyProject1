@@ -103,7 +103,7 @@ function onStart(){
     timer.ten = 0
     timer.seconde++
   }
-  if(timer.seconde>=99){
+  if(timer.seconde>=59){
     timer.seconde = 0
     timer.minute++
   }
