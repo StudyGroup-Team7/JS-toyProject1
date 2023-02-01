@@ -214,7 +214,6 @@ const handler = (event) => {
   todos.push(todo);
   addItem(todo);
   save();
-
   input.value = '';
 }
 

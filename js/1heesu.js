@@ -1,4 +1,5 @@
 // NAV MENU
+
 const activeEl = document.querySelectorAll('.active-el')
 const menuToggelEl = document.querySelector('.menu-toggle')
 const menuListEl = document.querySelectorAll('.main-nav-list ul li')

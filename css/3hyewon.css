@@ -292,6 +292,7 @@ main .greetings {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
+  overflow: auto;
 }
 .todo-container .todo-box {
   display: flex;

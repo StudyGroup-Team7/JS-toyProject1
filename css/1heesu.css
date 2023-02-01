@@ -21,7 +21,6 @@ body{
   background-attachment: fixed;
 }
 
-
 a{
   color: inherit;
   text-decoration: none;
@@ -49,7 +48,6 @@ h1{
   cursor: pointer;
 }
 
-
 .btn:hover{
   color: #fff;
   background-color: rgb(137, 124, 249);
@@ -75,7 +73,6 @@ h1{
 }
 
 
-
 /******* NAV MENU *******/
 .main-header{
   width: 100%;
@@ -93,6 +90,7 @@ h1{
   right: 0;
   margin: 0 auto;
 }
+
 
 .masthead .menu-toggle{
   width: 4.5rem;
@@ -326,6 +324,7 @@ h1{
 }
 
 /******* TODO-LIST *******/
+
 .todo{
   padding-top: 14rem;
 
@@ -402,6 +401,7 @@ h1{
   width: 1.4em;
   height: 1.4em;
 }
+
 
 .todo-list .task li span{
   margin-left: 0.5em;
